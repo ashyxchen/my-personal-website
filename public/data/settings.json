@@ -43,9 +43,9 @@
             "flagUrl": "images/flags/fr.png"
         },
         {
-            "name": "한국어",
-            "id": "ko",
-            "flagUrl": "images/flags/ko.png"
+            "name": "简体中文",
+            "id": "zh",
+            "flagUrl": "images/flags/zh.png"
         }
     ],
 
@@ -58,7 +58,7 @@
                 "en": {"name": "Dark Mode"},
                 "es": {"name": "Modo Oscuro"},
                 "fr": {"name": "Mode Sombre"},
-                "ko": {"name": "다크 모드"}
+                "zh": {"name": "深色模式"}
             }
         },
         {
@@ -69,7 +69,7 @@
                 "en": {"name": "Light Mode"},
                 "es": {"name": "Modo Claro"},
                 "fr": {"name": "Mode Clair"},
-                "ko": {"name": "라이트 모드"}
+                "zh": {"name": "浅色模式"}
             }
         }
     ],

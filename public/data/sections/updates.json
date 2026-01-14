@@ -19,11 +19,11 @@
                 "title_long_prefix": "Découvrez mes",
                 "title_long": "Dernières {{Mises à Jour}}"
             },
-            "ko": {
-                "title_short": "최근의 삶",
-                "title_short_nav": "업데이트",
-                "title_long_prefix": "내 최근",
-                "title_long": "{{업데이트}}를 확인해 보세요"
+            "zh": {
+                "title_short": "近况",
+                "title_short_nav": "动态",
+                "title_long_prefix": "看看我的",
+                "title_long": "近期 {{动态}}"
             }
         }
     },

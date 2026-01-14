@@ -19,11 +19,11 @@
                 "title_long_prefix": "Explorez",
                 "title_long": "Mes {{Compétences}}"
             },
-            "ko": {
-                "title_short": "스킬",
-                "title_short_nav": "스킬",
-                "title_long_prefix": "이것은 내",
-                "title_long": "{{스킬}}입니다"
+            "zh": {
+                "title_short": "技能",
+                "title_short_nav": "技能",
+                "title_long_prefix": "了解",
+                "title_long": "我的 {{技能}}"
             }
         }
     },

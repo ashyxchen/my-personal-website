@@ -19,11 +19,11 @@
                 "title_long_prefix": "Découvrez",
                 "title_long": "Mon {{Portfolio}}"
             },
-            "ko": {
-                "title_short": "포트폴리오",
-                "title_short_nav": "포트폴리오",
-                "title_long_prefix": "이것은 내",
-                "title_long": "{{포트폴리오}}입니다"
+            "zh": {
+                "title_short": "作品集",
+                "title_short_nav": "作品集",
+                "title_long_prefix": "看看我的",
+                "title_long": "我的 {{作品集}}"
             }
         }
     },

@@ -5,25 +5,25 @@
                 "title_short": "Welcome!",
                 "title_short_nav": "About me",
                 "title_long_prefix": "Hello...",
-                "title_long": "I'm {{Mark Choi!}}"
+                "title_long": "I'm {{Ashton Chen!}}"
             },
             "es": {
                 "title_short": "¡Saludos!",
                 "title_short_nav": "Sobre mí",
                 "title_long_prefix": "Hola...",
-                "title_long": "Soy {{Mark Choi!}}"
+                "title_long": "Soy {{Ashton Chen!}}"
             },
             "fr": {
                 "title_short": "Salut !",
                 "title_short_nav": "À propos",
                 "title_long_prefix": "Salut...",
-                "title_long": "Je suis {{Mark Choi !}}"
+                "title_long": "Je suis {{Ashton Chen !}}"
             },
-            "ko": {
-                "title_short": "환영합니다!",
-                "title_short_nav": "소개",
-                "title_long_prefix": "안녕하세요...",
-                "title_long": "저는 {{최민석}}입니다!"
+            "zh": {
+                "title_short": "欢迎！",
+                "title_short_nav": "关于我",
+                "title_long_prefix": "你好...",
+                "title_long": "我是 {{Ashton Chen!}}"
             }
         }
     },
@@ -199,15 +199,15 @@
                     "locales": {
                         "en": {
                             "title": "Creative Director at [[Dribbble]]",
-                            "text": "Mark Choi's [[attention to detail]] and his [[innovative thinking]] brought a fresh perspective to our whole design process! Simply amazing!"
+                            "text": "Ashton Chen's [[attention to detail]] and his [[innovative thinking]] brought a fresh perspective to our whole design process! Simply amazing!"
                         },
                         "es": {
                             "title": "Director Creativo en [[Dribbble]]",
-                            "text": "La [[atención al detalle]] y el [[pensamiento innovador]] de Mark Choi aportaron una perspectiva fresca a todo nuestro proceso de diseño. ¡Simplemente increíble!"
+                            "text": "La [[atención al detalle]] y el [[pensamiento innovador]] de Ashton Chen aportaron una perspectiva fresca a todo nuestro proceso de diseño. ¡Simplemente increíble!"
                         },
                         "fr": {
                             "title": "Directeur Créatif chez [[Dribbble]]",
-                            "text": "L’[[attention aux détails]] et la [[pensée innovante]] de Mark Choi ont apporté une perspective nouvelle à tout notre processus de design ! Simplement incroyable !"
+                            "text": "L’[[attention aux détails]] et la [[pensée innovante]] de Ashton Chen ont apporté une perspective nouvelle à tout notre processus de design ! Simplement incroyable !"
                         },
                         "ko": {
                             "title": "[[Dribbble]] 크리에이티브 디렉터",

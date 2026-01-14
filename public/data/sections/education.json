@@ -19,11 +19,11 @@
                 "title_long_prefix": "C'est mon",
                 "title_long": "{{Contexte}} Éducatif"
             },
-            "ko": {
-                "title_short": "교육",
-                "title_short_nav": "교육",
-                "title_long_prefix": "이것은 내",
-                "title_long": "{{교육적}} 배경"
+            "zh": {
+                "title_short": "教育",
+                "title_short_nav": "教育",
+                "title_long_prefix": "这是我的",
+                "title_long": "{{教育}}背景"
             }
         }
     },

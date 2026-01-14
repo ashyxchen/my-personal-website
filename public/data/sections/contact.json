@@ -19,11 +19,11 @@
                 "title_long_prefix": "N'hésitez pas à",
                 "title_long": "Me {{Contacter}}"
             },
-            "ko": {
-                "title_short": "연락처",
-                "title_short_nav": "연락처",
-                "title_long_prefix": "주저하지 말고",
-                "title_long": "{{연락}} 주세요"
+            "zh": {
+                "title_short": "联系",
+                "title_short_nav": "联系",
+                "title_long_prefix": "欢迎随时",
+                "title_long": "{{联系}}我"
             }
         }
     },
@@ -122,7 +122,7 @@
                     "id": 4,
                     "faIcon": "fa-brands fa-facebook",
                     "faIconColors": { "bg": "", "fill": "" },
-                    "label": "Mark Choi",
+                    "label": "Ashton Chen",
                     "link": {"href": "https://facebook.com/profiles/mark.choi.855/default", "tooltipString": "open_website"},
                     "copyToClipboardButton": false,
                     "locales": {
