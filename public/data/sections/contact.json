@@ -7,12 +7,6 @@
                 "title_long_prefix": "Don't hesitate to",
                 "title_long": "{{Contact}} Me"
             },
-            "es": {
-                "title_short": "Contacto",
-                "title_short_nav": "Contacto",
-                "title_long_prefix": "No dudes en",
-                "title_long": "{{Contácta}}me"
-            },
             "fr": {
                 "title_short": "Contact",
                 "title_short_nav": "Contact",
@@ -75,83 +69,60 @@
             },
             "locales": {
                 "en": {"title": "Or if you {{prefer}}..."},
-                "es": {"title": "O si {{prefieres}}..."},
                 "fr": {"title": "Ou si vous {{préférez}}..."},
-                "ko": {"title": "또는 {{원하시면}}..."}
+                "zh": {"title": "或者，如果您{{更喜欢}}…"}
             },
             "items": [
                 {
                     "id": 1,
                     "faIcon": "fa-solid fa-phone",
                     "faIconColors": { "bg": "", "fill": "" },
-                    "label": "+1 (123) 456-7890",
-                    "link": {"href": "tel:11234567890", "tooltipString": "call_me"},
+                    "label": "+1 (647) 780-3866",
+                    "link": {"href": "tel:+16477803866", "tooltipString": "call_me"},
                     "copyToClipboardButton": true,
                     "locales": {
                         "en": {"title": "Phone"},
-                        "es": {"title": "Teléfono"},
                         "fr": {"title": "Téléphone"},
-                        "ko": {"title": "전화"}
+                        "zh": {"title": "电话"}
                     }
                 },
                 {
                     "id":2,
                     "faIcon": "fa-solid fa-envelope",
                     "faIconColors": { "bg": "", "fill": "" },
-                    "label": "mark.choi@email.com",
-                    "link": {"href": "mailto:mark.choi@email.com", "tooltipString": "email_me"},
+                    "label": "ash.chen@uwaterloo.ca",
+                    "link": {"href": "mailto:ash.chen@uwaterloo.ca", "tooltipString": "email_me"},
                     "copyToClipboardButton": true,
                     "locales": {
                         "en": {"title": "E-mail"},
-                        "ko": {"title": "이메일"}
+                        "fr": {"title": "E-mail"},
+                        "zh": {"title": "电子邮件"}
                     }
                 },
                 {
                     "id": 3,
                     "faIcon": "fa-brands fa-linkedin",
                     "faIconColors": { "bg": "", "fill": "" },
-                    "label": "@markchoi",
-                    "link": {"href": "https://linkedin.com/in/", "tooltipString": "open_website"},
+                    "label": "in/ashyuxchen",
+                    "link": {"href": "https://linkedin.com/in/ashyuxchen", "tooltipString": "open_website"},
                     "copyToClipboardButton": false,
                     "locales": {
                         "en": {"title": "LinkedIn"},
-                        "ko": {"title": "링크드인"}
+                        "fr": {"title": "LinkedIn"},
+                        "zh": {"title": "领英"}
                     }
                 },
                 {
                     "id": 4,
-                    "faIcon": "fa-brands fa-facebook",
+                    "faIcon": "fa-brands fa-github",
                     "faIconColors": { "bg": "", "fill": "" },
-                    "label": "Ashton Chen",
-                    "link": {"href": "https://facebook.com/profiles/mark.choi.855/default", "tooltipString": "open_website"},
+                    "label": "@yuxstar1444",
+                    "link": {"href": "https://github.com/yuxstar1444", "tooltipString": "open_website"},
                     "copyToClipboardButton": false,
                     "locales": {
-                        "en": {"title": "Facebook"},
-                        "ko": {"title": "페이스북"}
-                    }
-                },
-                {
-                    "id": 5,
-                    "faIcon": "fa-brands fa-instagram",
-                    "faIconColors": { "bg": "", "fill": "" },
-                    "label": "@codingmark",
-                    "link": {"href": "https://instagram.com/", "tooltipString": "open_website"},
-                    "copyToClipboardButton": false,
-                    "locales": {
-                        "en": {"title": "Instagram"},
-                        "ko": {"title": "인스타그램"}
-                    }
-                },
-                {
-                    "id": 6,
-                    "faIcon": "fa-brands fa-tiktok",
-                    "faIconColors": { "bg": "", "fill": "" },
-                    "label": "@markchoi",
-                    "link": {"href": "https://tiktok.com/@markchoi", "tooltipString": "open_website"},
-                    "copyToClipboardButton": false,
-                    "locales": {
-                        "en": { "title": "TikTok" },
-                        "ko": { "title": "틱톡" }
+                        "en": {"title": "GitHub"},
+                        "fr": {"title": "GitHub"},
+                        "zh": {"title": "GitHub"}
                     }
                 }
             ]

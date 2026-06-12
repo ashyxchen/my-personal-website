@@ -5,7 +5,6 @@
             "faIcon": "fa-regular fa-user",
             "locales": {
                 "en": {"title": "Home"},
-                "es": {"title": "Inicio"},
                 "fr": {"title": "Accueil"},
                 "zh": {"title": "首页"}
             }
@@ -15,7 +14,6 @@
             "faIcon": "fa-regular fa-clock",
             "locales": {
                 "en": {"title": "History"},
-                "es": {"title": "Trayectoria"},
                 "fr": {"title": "Parcours"},
                 "zh": {"title": "经历"}
             }
@@ -25,7 +23,6 @@
             "faIcon": "fa-regular fa-folder-open",
             "locales": {
                 "en": {"title": "Showcase"},
-                "es": {"title": "Vitrina"},
                 "fr": {"title": "Vitrine"},
                 "zh": {"title": "作品"}
             }
@@ -35,7 +32,6 @@
             "faIcon": "fa-regular fa-object-ungroup",
             "locales": {
                 "en": {"title": "More"},
-                "es": {"title": "Más"},
                 "fr": {"title": "Plus"},
                 "zh": {"title": "更多"}
             }

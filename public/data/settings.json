@@ -8,8 +8,8 @@
 
     "preloaderSettings": {
         "enabled": true,
-        "title": "React <strong>Portfolio</strong>",
-        "subtitle": "by Ryan Balieiro",
+        "title": "Ashton <strong>Chen</strong>",
+        "subtitle": "Machine Learning Engineer",
         "logoOffset": {
             "right": 14,
             "top": 2,
@@ -21,7 +21,7 @@
         "animatedCursorEnabled": true,
         "backgroundStyle": "animated",
         "defaultLanguageId": "en",
-        "defaultThemeId": "dark",
+        "defaultThemeId": "light",
         "fullscreenEnabled": true,
         "showSpinnerOnThemeChange": false
     },
@@ -31,11 +31,6 @@
             "name": "English",
             "id": "en",
             "flagUrl": "images/flags/en-us.png"
-        },
-        {
-            "name": "Español",
-            "id": "es",
-            "flagUrl": "images/flags/es.png"
         },
         {
             "name": "Français",
@@ -56,7 +51,6 @@
             "dark": true,
             "locales": {
                 "en": {"name": "Dark Mode"},
-                "es": {"name": "Modo Oscuro"},
                 "fr": {"name": "Mode Sombre"},
                 "zh": {"name": "深色模式"}
             }
@@ -67,7 +61,6 @@
             "dark": false,
             "locales": {
                 "en": {"name": "Light Mode"},
-                "es": {"name": "Modo Claro"},
                 "fr": {"name": "Mode Clair"},
                 "zh": {"name": "浅色模式"}
             }
@@ -78,7 +71,7 @@
         "title": "\uD83D\uDDA5️ Hey there, fellow developer!",
         "items": [
             {
-                "description": "This is an open-source template based on the React framework.",
+                "description": "Thanks for stopping by. This site is built with React.",
                 "list": [],
                 "listStyle": "none"
             },
@@ -91,21 +84,6 @@
                     "EmailJS: https://www.emailjs.com/",
                     "Font Awesome: https://fontawesome.com/",
                     "PrimeIcons: https://primefaces.org/"
-                ],
-                "listStyle": "bulleted"
-            },
-            {
-                "description": "Clone it and customize it for your own portfolio:",
-                "list": [
-                    "https://github.com/ryanbalieiro/react-portfolio-template"
-                ],
-                "listStyle": "none"
-            },
-            {
-                "description": "Developer Info:",
-                "list": [
-                    "GitHub: https://github.com/ryanbalieiro",
-                    "Website: https://ryanbalieiro.com"
                 ],
                 "listStyle": "bulleted"
             }
