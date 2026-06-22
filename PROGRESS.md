@@ -6,12 +6,21 @@ needs doing. It is **not** part of the published site.
 
 ## How to run
 
+> **Prerequisite — Node.js.** This machine had no Node/npm installed (the only
+> `node.exe` on disk belonged to Adobe Creative Cloud). Installed **Node.js LTS
+> v24.17.0** (npm 11.13.0) via `winget install --id OpenJS.NodeJS.LTS --source
+> winget`. New terminals pick it up automatically from the system PATH.
+
 ```bash
 npm install      # first time only
 npm run dev      # start the dev server (Vite)
 npm run build    # production build
 npm run preview  # preview the production build
 ```
+
+> **Build verified (2026-06-21).** `npm install` + `npm run build` complete
+> cleanly with Vite 6.4.1 (836 modules transformed, no errors) after the
+> deploy-readiness edits and demo-image cleanup below.
 
 All site content lives in `public/data/` (top-level config) and
 `public/data/sections/` (per-section content). Resume source of truth:
@@ -46,8 +55,8 @@ content.
 | Company / school logos | `public/images/logos/` | ✅ Done (official) |
 | Default theme | `public/data/settings.json` | ✅ Light mode |
 | Headshot | `public/images/pictures/profile-picture.jpg` | ❌ Template placeholder |
-| SEO / OG / canonical URLs | `index.html` | ❌ Template URLs |
-| Deploy base path | `vite.config.js` | ❌ Template repo name |
+| SEO / OG / canonical URLs | `index.html` | ✅ Done |
+| Deploy base path | `vite.config.js` | ✅ Done |
 
 > **Resume download is live.** `resumePdfUrl` in `profile.json` points to
 > `Ashton-Chen-Resume.pdf` (hosted in `public/`), so the "Download CV" button
@@ -89,9 +98,9 @@ content.
 
 - [ ] Replace `public/images/pictures/profile-picture.jpg` if it's still the
   template image.
-- [ ] Remove unused template demo images (testimonial-person-*,
+- [x] Remove unused template demo images (testimonial-person-*,
   timeline-place-mit/harvard/adobe, screenshot-demo-*).
-- [ ] Fix locale keys: several section files use `ko` (Korean) but the site is
+- [x] Fix locale keys: several section files use `ko` (Korean) but the site is
   configured for `zh` (Chinese).
 - [ ] Fill in missing `zh` keys in `strings.json`.
 - [x] Removed the Spanish (`es`) language tab from `settings.json`; the switcher
@@ -104,15 +113,15 @@ From a full site audit. Hosting target confirmed: **GitHub Pages project site**
 
 ### 🔴 Critical
 
-- [ ] **Fix `index.html` template URLs** — canonical, `og:url`, `og:image`,
+- [x] **Fix `index.html` template URLs** — canonical, `og:url`, `og:image`,
   `twitter:url`, `twitter:image`, and the `ld+json` `url` all still point to
   `https://ryanbalieiro.github.io/react-portfolio-template/`. Repoint to
   `https://yuxstar1444.github.io/my-personal-website/` (images →
   `…/images/pictures/og-image.jpg`). Breaks SEO + social-share previews.
-- [ ] **Fix `index.html` dark theme meta** (light mode is now default, causes a
+- [x] **Fix `index.html` dark theme meta** (light mode is now default, causes a
   dark flash on load): `color-scheme` `dark`→`light`, `theme-color` `#111111`→
   light (`#ffd3a6`), and `<body style="background-color:#111111">`→ light.
-- [ ] **Set Vite base path** — `vite.config.js` `base`
+- [x] **Set Vite base path** — `vite.config.js` `base`
   `/react-portfolio-template/` → `/my-personal-website/` (required for the
   deployed site to resolve JS/CSS/images).
 - [ ] **Real headshot** — replace `public/images/pictures/profile-picture.jpg`
@@ -134,10 +143,10 @@ From a full site audit. Hosting target confirmed: **GitHub Pages project site**
 
 ### 🟢 Low / cleanup
 
-- [ ] Delete leftover template demo images in `public/images/pictures/`
+- [x] Delete leftover template demo images in `public/images/pictures/`
   (Adobe / Coursera / Harvard / MIT / Udacity timeline logos,
   `screenshot-demo-*`).
-- [ ] Fix locale keys: several section files use `ko` (Korean) but the site is
+- [x] Fix locale keys: several section files use `ko` (Korean) but the site is
   configured for `zh`.
 - [ ] Fill in missing `zh` keys in `strings.json`.
 
@@ -146,9 +155,38 @@ From a full site audit. Hosting target confirmed: **GitHub Pages project site**
 - [ ] Build + deploy per
   `docs/tutorials/TUTORIAL_21_DEPLOYING_FOR_PRODUCTION.md`.
 
+## Next steps (remaining)
+
+Deploy-readiness (URLs, base path, theme meta), the `ko`→`zh` locale fix, and
+the demo-image cleanup are **done**, and the production build passes. What's
+left, by priority:
+
+**🔴 Needs an asset from you**
+- [ ] **Headshot** — supply a real photo to replace
+  `public/images/pictures/profile-picture.jpg`.
+
+**🟠 High**
+- [ ] **Expand portfolio** — add 3–5 real projects to `portfolio.json` with
+  links/screenshots (needs project details from you).
+
+**🟡 Medium**
+- [ ] **Branded `og-image.jpg`** social-preview card (needs a designed image).
+- [ ] **Personalize favicon** — replace the generic template
+  `public/images/svg/logo.svg`. _(Can be generated without input.)_
+- [ ] **EmailJS** — swap the template author's keys in `contact.json` for your
+  own account and lock the public key to the deployed domain.
+
+**🟢 Low**
+- [ ] **Fill missing `zh` keys** in `strings.json`. _(Can be done without
+  input.)_
+
+**Can be done now without input:** favicon, `zh` string keys, EmailJS config
+scaffold. **Needs you:** headshot photo, real project details, designed OG card.
+
 ## Done-when checklist
 
 - [ ] `npm run dev` renders with no console errors.
+- [x] `npm run build` completes without errors (verified 2026-06-21).
 - [ ] No remaining `Ryan Balieiro`, `Mark Choi`, or `mark.choi` strings
   (`grep -ri "ryan balieiro\|mark choi" public/`).
 - [ ] Resume download button stays hidden while `resumePdfUrl` is empty.

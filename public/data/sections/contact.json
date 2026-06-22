@@ -50,11 +50,11 @@
                     "contact_thank_you_footer": "La réponse sera envoyée à votre adresse e-mail: {{$email}}",
                     "title": "Envoyez-moi un {{message}}"
                 },
-                "ko": {
-                    "contact_thank_you_title": "{{감사합니다}}!",
-                    "contact_thank_you_body": "귀하의 메시지를 받았으며 곧 연락드리겠습니다. 귀하의 시간에 감사드리며 연결되기를 기대합니다!",
-                    "contact_thank_you_footer": "답변은 귀하의 이메일 주소 {{$email}}로 전송됩니다.",
-                    "title": "{{메시지를}} 보내주세요"
+                "zh": {
+                    "contact_thank_you_title": "{{感谢}}您的联系！",
+                    "contact_thank_you_body": "我已收到您的留言，并会尽快与您联系。感谢您抽出宝贵时间，期待与您交流！",
+                    "contact_thank_you_footer": "回复将发送至您的电子邮箱：{{$email}}",
+                    "title": "给我发送{{消息}}"
                 }
             },
             "items": null
