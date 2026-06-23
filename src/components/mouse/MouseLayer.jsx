@@ -22,6 +22,9 @@ function MouseLayer({ active, isBlockedByOverlay, hidden }) {
 
     /** @constructs **/
     useEffect(() => {
+        if(!active)
+            return
+
         let animationFrameId
 
         const animate = () => {
@@ -36,7 +39,7 @@ function MouseLayer({ active, isBlockedByOverlay, hidden }) {
 
         animationFrameId = requestAnimationFrame(animate)
         return () => { cancelAnimationFrame(animationFrameId) }
-    }, [])
+    }, [active])
 
     /** @listens input.lastMouseTarget **/
     useEffect(() => {
