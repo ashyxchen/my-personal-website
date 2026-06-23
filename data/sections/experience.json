@@ -1,0 +1,237 @@
+{
+    "title": {
+        "locales": {
+            "en": {
+                "title_short": "Experience",
+                "title_short_nav": "Experience",
+                "title_long_prefix": "Summary of my",
+                "title_long": "{{Work}} Experience"
+            },
+            "es": {
+                "title_short": "Experiencia",
+                "title_short_nav": "Experiencia",
+                "title_long_prefix": "Resumen de mi",
+                "title_long": "Experiencia {{Laboral}}"
+            },
+            "fr": {
+                "title_short": "Expérience",
+                "title_short_nav": "Expérience",
+                "title_long_prefix": "Résumé de mon",
+                "title_long": "Parcours {{Professionel}}"
+            },
+            "zh": {
+                "title_short": "经验",
+                "title_short_nav": "经验",
+                "title_long_prefix": "我的",
+                "title_long": "{{工作}}经历"
+            }
+        }
+    },
+
+    "articles": [
+        {
+            "id": 1,
+            "component": "ArticleTimeline",
+            "locales": {},
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "dateStart"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "img": "images/logos/magna.svg",
+                    "faIcon": "fa-solid fa-cloud-sun",
+                    "faIconColors": {"bg": "#FFFFFF", "fill": "#FFFFFF"},
+                    "dateStart": {"year": 2022, "month": 9},
+                    "dateEnd": {"year": 2022, "month": 12},
+                    "locales": {
+                        "en": {
+                            "title": "{{Simulation}} Engineer",
+                            "province": "Vaughan, ON",
+                            "country": "Canada",
+                            "institution": "Magna International – OtO Inc.",
+                            "text": "Built and shipped [[computer-vision and path-planning systems]] for autonomous outdoor robotics:",
+                            "list": [
+                                "Deployed CNN-based weather detection to 200 beta users by containerizing a PyTorch inference pipeline on GCP with Docker and automated CI/CD",
+                                "Reduced path-planning inference from 150ms to 100ms (p95) by optimizing A* graph search with learned heuristics and NumPy vectorization"
+                            ],
+                            "tags": ["PyTorch", "GCP", "Docker", "OpenCV"]
+                        },
+                        "fr": {
+                            "title": "Ingénieur en {{Simulation}}",
+                            "province": "Vaughan, ON",
+                            "country": "Canada",
+                            "institution": "Magna International – OtO Inc.",
+                            "text": "Conception et déploiement de [[systèmes de vision par ordinateur et de planification de trajectoire]] pour la robotique autonome d'extérieur :",
+                            "list": [
+                                "Déploiement d'une détection météo basée sur CNN auprès de 200 utilisateurs bêta en conteneurisant un pipeline d'inférence PyTorch sur GCP avec Docker et CI/CD automatisé",
+                                "Réduction de l'inférence de planification de trajectoire de 150ms à 100ms (p95) en optimisant la recherche A* avec des heuristiques apprises et la vectorisation NumPy"
+                            ],
+                            "tags": ["PyTorch", "GCP", "Docker", "OpenCV"]
+                        },
+                        "zh": {
+                            "title": "{{仿真}}工程师",
+                            "province": "安大略省沃恩市",
+                            "country": "加拿大",
+                            "institution": "麦格纳国际 – OtO Inc.",
+                            "text": "为户外自主机器人构建并交付了[[计算机视觉与路径规划系统]]：",
+                            "list": [
+                                "通过在 GCP 上使用 Docker 和自动化 CI/CD 将 PyTorch 推理流程容器化，将基于 CNN 的天气检测部署给 200 名 Beta 用户",
+                                "通过结合学习启发式和 NumPy 向量化优化 A* 图搜索，将路径规划推理从 150 毫秒降至 100 毫秒（p95）"
+                            ],
+                            "tags": ["PyTorch", "GCP", "Docker", "OpenCV"]
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "img": "images/logos/waterloo-logo.png",
+                    "faIcon": "fa-solid fa-flask",
+                    "faIconColors": {"bg": "#FFFFFF", "fill": "#FFD100"},
+                    "dateStart": {"year": 2024, "month": 1},
+                    "dateEnd": {"year": 2024, "month": 4},
+                    "locales": {
+                        "en": {
+                            "title": "Undergraduate {{Research Assistant}}",
+                            "province": "Waterloo, ON",
+                            "country": "Canada",
+                            "institution": "University of Waterloo",
+                            "text": "Researched [[deep reinforcement learning verification]] for autonomous-vehicle safety:",
+                            "list": [
+                                "Contributed to a grant proposal supporting $121,220 of NRC-funded research on DRL verification for autonomous-vehicle safety using PyTorch, Gymnasium, and the CARLA simulator",
+                                "Achieved 95% policy coverage across 50+ adversarial scenarios by implementing PPO and SAC with custom reward shaping in PyTorch",
+                                "Reduced experiment runtime from 12 hours to 4 hours per cycle by engineering parallelized data pipelines with NumPy, Pandas, and Python multiprocessing"
+                            ],
+                            "tags": ["PyTorch", "Reinforcement Learning", "CARLA", "Gymnasium"]
+                        },
+                        "fr": {
+                            "title": "{{Assistant de Recherche}} de Premier Cycle",
+                            "province": "Waterloo, ON",
+                            "country": "Canada",
+                            "institution": "Université de Waterloo",
+                            "text": "Recherche sur la [[vérification de l'apprentissage par renforcement profond]] pour la sécurité des véhicules autonomes :",
+                            "list": [
+                                "Contribution à une demande de subvention soutenant 121 220 $ de recherche financée par le CNRC sur la vérification du DRL pour la sécurité des véhicules autonomes avec PyTorch, Gymnasium et le simulateur CARLA",
+                                "Atteinte de 95 % de couverture de politiques sur plus de 50 scénarios adverses en implémentant PPO et SAC avec un modelage de récompense personnalisé dans PyTorch",
+                                "Réduction du temps d'exécution des expériences de 12 à 4 heures par cycle grâce à des pipelines de données parallélisés avec NumPy, Pandas et le multiprocessing Python"
+                            ],
+                            "tags": ["PyTorch", "Reinforcement Learning", "CARLA", "Gymnasium"]
+                        },
+                        "zh": {
+                            "title": "本科{{研究助理}}",
+                            "province": "安大略省滑铁卢市",
+                            "country": "加拿大",
+                            "institution": "滑铁卢大学",
+                            "text": "研究面向自动驾驶安全的[[深度强化学习验证]]：",
+                            "list": [
+                                "参与撰写资助提案，支持了 121,220 美元由 NRC 资助、关于使用 PyTorch、Gymnasium 和 CARLA 模拟器进行自动驾驶安全 DRL 验证的研究",
+                                "通过在 PyTorch 中实现带自定义奖励塑造的 PPO 与 SAC 算法，在 50 多个对抗场景中实现了 95% 的策略覆盖率",
+                                "通过使用 NumPy、Pandas 和 Python 多进程构建并行化数据流程，将每个评估周期的实验运行时间从 12 小时缩短至 4 小时"
+                            ],
+                            "tags": ["PyTorch", "Reinforcement Learning", "CARLA", "Gymnasium"]
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "img": "images/logos/motorola.svg",
+                    "faIcon": "fa-solid fa-microchip",
+                    "faIconColors": {"bg": "#FFFFFF", "fill": "#FFFFFF"},
+                    "dateStart": {"year": 2024, "month": 9},
+                    "dateEnd": {"year": 2024, "month": 12},
+                    "locales": {
+                        "en": {
+                            "title": "{{Firmware}} Engineer",
+                            "province": "Toronto, ON",
+                            "country": "Canada",
+                            "institution": "Motorola Solutions",
+                            "text": "Optimized [[real-time audio classification]] for embedded deployment:",
+                            "list": [
+                                "Improved audio classification F1 from 0.78 to 0.90 (+12 points) by implementing real-time feature extraction (FFT, MFCCs) and inference optimization in C and MATLAB",
+                                "Reduced inference latency from 45ms to 32ms per sample by profiling and optimizing memory-efficient signal-processing pipelines for embedded deployment"
+                            ],
+                            "tags": ["C", "MATLAB", "DSP", "Embedded"]
+                        },
+                        "fr": {
+                            "title": "Ingénieur {{Firmware}}",
+                            "province": "Toronto, ON",
+                            "country": "Canada",
+                            "institution": "Motorola Solutions",
+                            "text": "Optimisation de la [[classification audio en temps réel]] pour un déploiement embarqué :",
+                            "list": [
+                                "Amélioration du F1 de classification audio de 0,78 à 0,90 (+12 points) en implémentant l'extraction de caractéristiques en temps réel (FFT, MFCC) et l'optimisation d'inférence en C et MATLAB",
+                                "Réduction de la latence d'inférence de 45ms à 32ms par échantillon en profilant et optimisant des pipelines de traitement du signal économes en mémoire pour le déploiement embarqué"
+                            ],
+                            "tags": ["C", "MATLAB", "DSP", "Embedded"]
+                        },
+                        "zh": {
+                            "title": "{{固件}}工程师",
+                            "province": "安大略省多伦多市",
+                            "country": "加拿大",
+                            "institution": "摩托罗拉系统公司",
+                            "text": "为嵌入式部署优化[[实时音频分类]]：",
+                            "list": [
+                                "通过在 C 和 MATLAB 中实现实时特征提取（FFT、MFCC）与推理优化，将音频分类 F1 从 0.78 提升至 0.90（+12 分）",
+                                "通过剖析并优化内存高效的信号处理流程以用于嵌入式部署，将单样本推理延迟从 45 毫秒降至 32 毫秒"
+                            ],
+                            "tags": ["C", "MATLAB", "DSP", "Embedded"]
+                        }
+                    }
+                },
+                {
+                    "id": 4,
+                    "img": "images/logos/ibm.svg",
+                    "faIcon": "fa-solid fa-brain",
+                    "faIconColors": {"bg": "#FFFFFF", "fill": "#FFFFFF"},
+                    "dateStart": {"year": 2025, "month": 5},
+                    "dateEnd": {"year": 2025, "month": 8},
+                    "locales": {
+                        "en": {
+                            "title": "{{Machine Learning}} Engineer",
+                            "province": "Toronto, ON",
+                            "country": "Canada",
+                            "institution": "IBM / Venturelab",
+                            "text": "Built, optimized, and deployed [[computer-vision models]] to edge hardware:",
+                            "list": [
+                                "Improved segmentation model F1 from 0.52 to 0.73 (+21 points) by fine-tuning an EfficientNet-B3 encoder with a Dice+BCE composite loss in TensorFlow and stratified k-fold cross-validation",
+                                "Reduced model debugging cycles from 5 days to 2 days per iteration by building evaluation pipelines with Scikit-learn metrics (F1, IoU, precision-recall) and failure-case visualization",
+                                "Achieved 24 FPS edge inference (up from 8 FPS) by converting Keras models to ONNX and optimizing with TensorRT for NVIDIA Jetson Orin",
+                                "Enabled exact experiment reproduction across the team with MLflow tracking, fixed random seeds, and versioned checkpoints"
+                            ],
+                            "tags": ["TensorFlow", "Keras", "ONNX", "TensorRT", "MLflow"]
+                        },
+                        "fr": {
+                            "title": "Ingénieur {{Machine Learning}}",
+                            "province": "Toronto, ON",
+                            "country": "Canada",
+                            "institution": "IBM / Venturelab",
+                            "text": "Conception, optimisation et déploiement de [[modèles de vision par ordinateur]] sur matériel embarqué :",
+                            "list": [
+                                "Amélioration du F1 du modèle de segmentation de 0,52 à 0,73 (+21 points) en affinant un encodeur EfficientNet-B3 avec une perte composite Dice+BCE dans TensorFlow et une validation croisée k-fold stratifiée",
+                                "Réduction des cycles de débogage du modèle de 5 à 2 jours par itération en construisant des pipelines d'évaluation avec des métriques Scikit-learn (F1, IoU, précision-rappel) et la visualisation des cas d'échec",
+                                "Atteinte de 24 FPS d'inférence embarquée (contre 8 FPS) en convertissant les modèles Keras en ONNX et en optimisant avec TensorRT pour NVIDIA Jetson Orin",
+                                "Mise en place d'une reproduction exacte des expériences dans l'équipe grâce au suivi MLflow, des graines aléatoires fixes et des checkpoints versionnés"
+                            ],
+                            "tags": ["TensorFlow", "Keras", "ONNX", "TensorRT", "MLflow"]
+                        },
+                        "zh": {
+                            "title": "{{机器学习}}工程师",
+                            "province": "安大略省多伦多市",
+                            "country": "加拿大",
+                            "institution": "IBM / Venturelab",
+                            "text": "构建、优化并将[[计算机视觉模型]]部署到边缘硬件：",
+                            "list": [
+                                "通过在 TensorFlow 中使用 Dice+BCE 复合损失微调 EfficientNet-B3 编码器并采用分层 k 折交叉验证，将分割模型 F1 从 0.52 提升至 0.73（+21 分）",
+                                "通过使用 Scikit-learn 指标（F1、IoU、精确率-召回率）和失败案例可视化构建评估流程，将每次迭代的模型调试周期从 5 天缩短至 2 天",
+                                "通过将 Keras 模型转换为 ONNX 并使用 TensorRT 针对 NVIDIA Jetson Orin 优化，将边缘推理从 8 FPS 提升至 24 FPS",
+                                "通过 MLflow 跟踪、固定随机种子和版本化检查点，实现了团队范围内实验的精确复现"
+                            ],
+                            "tags": ["TensorFlow", "Keras", "ONNX", "TensorRT", "MLflow"]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

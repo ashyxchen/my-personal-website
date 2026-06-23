@@ -1,0 +1,200 @@
+{
+    "title": {
+        "locales": {
+            "en": {
+                "title_short": "Welcome!",
+                "title_short_nav": "About me",
+                "title_long_prefix": "Hello...",
+                "title_long": "I'm {{Ashton Chen!}}"
+            },
+            "es": {
+                "title_short": "¡Saludos!",
+                "title_short_nav": "Sobre mí",
+                "title_long_prefix": "Hola...",
+                "title_long": "Soy {{Ashton Chen!}}"
+            },
+            "fr": {
+                "title_short": "Salut !",
+                "title_short_nav": "À propos",
+                "title_long_prefix": "Salut...",
+                "title_long": "Je suis {{Ashton Chen !}}"
+            },
+            "zh": {
+                "title_short": "欢迎！",
+                "title_short_nav": "关于我",
+                "title_long_prefix": "你好...",
+                "title_long": "我是 {{Ashton Chen!}}"
+            }
+        }
+    },
+
+    "articles": [
+        {
+            "id": 1,
+            "component": "ArticleInlineList",
+            "locales": {},
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc",
+                "display_as_list_if_width_is_lower_than": 380
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "label": "Toronto, ON – Canada",
+                    "link": {"href": "", "tooltipString": ""},
+                    "faIcon": "pi pi-map-marker"
+                },
+                {
+                    "id": 2,
+                    "label": "ash.chen@uwaterloo.ca",
+                    "link": {"href": "mailto:ash.chen@uwaterloo.ca", "tooltipString": "email_me"},
+                    "faIcon": "fa-regular fa-envelope"
+                },
+                {
+                    "id": 3,
+                    "label": "@yuxstar1444",
+                    "link": {"href": "https://github.com/yuxstar1444", "tooltipString": "see_on_github"},
+                    "faIcon": "fa-brands fa-github"
+                }
+            ]
+        },
+
+        {
+            "id": 2,
+            "component": "ArticleText",
+            "locales": {
+                "en": {"title": "{{A little bit}} about me..."},
+                "fr": {"title": "{{Un peu}} à propos de moi..."},
+                "zh": {"title": "{{关于我}}的一点介绍..."}
+            },
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "img": "images/pictures/about-texts-image-1.png",
+                    "faIcon": "",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "locales": {
+                        "en": {
+                            "text": "<p>I'm a {{Systems Design Engineering}} student at the University of Waterloo with a background in both embedded firmware and machine learning. Most of what I've built sits at the intersection of the two — writing firmware for constrained hardware and getting models to run well on it.</p><p>I've worked at IBM, Motorola, and Magna on projects ranging from [[computer vision pipelines to autonomous systems]]. My capstone this year was a social robot (Raspberry Pi 5 + ESP32) where I wrote the firmware, the I2C drivers, and the inference stack. That's the kind of problem I want to keep solving.</p><p>Finishing my degree in 2027 and looking for roles where the hardware and the model have to talk to each other. Feel free to [[reach out.]]</p>"
+                        },
+                        "fr": {
+                            "text": "<p>Je suis étudiant en {{génie de conception de systèmes}} à l'Université de Waterloo, avec une formation à la fois en firmware embarqué et en apprentissage automatique. La plupart de ce que j'ai construit se situe à l'intersection des deux — écriture de firmware pour du matériel contraint et optimisation de modèles pour y tourner correctement.</p><p>J'ai travaillé chez IBM, Motorola et Magna sur des projets allant des [[pipelines de vision par ordinateur aux systèmes autonomes]]. Mon projet capstone cette année était un robot social (Raspberry Pi 5 + ESP32) où j'ai écrit le firmware, les pilotes I2C et la pile d'inférence. C'est le type de problème que je veux continuer à résoudre.</p><p>Je termine mon diplôme en 2027 et je cherche des postes où le matériel et le modèle doivent communiquer. N'hésitez pas à [[me contacter.]]</p>"
+                        },
+                        "zh": {
+                            "text": "<p>我是滑铁卢大学{{系统设计工程}}专业的学生，同时具备嵌入式固件和机器学习背景。我做过的大多数项目都处于两者的交汇点——为资源受限的硬件编写固件，并让机器学习模型在其上高效运行。</p><p>我曾在 IBM、Motorola 和 Magna 从事[[计算机视觉流水线到自主系统]]等项目。今年的毕业设计是一个社交机器人（Raspberry Pi 5 + ESP32），我负责编写固件、I2C 驱动和推理栈。这正是我想持续解决的问题。</p><p>2027 年完成学业，寻找需要硬件与模型协同工作的岗位。欢迎[[联系我。]]</p>"
+                        }
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": 4,
+            "component": "ArticleInfoList",
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc"
+            },
+            "locales": {
+                "en": {"title": "Personal {{interests}}"},
+                "fr": {"title": "Intérêts {{personnels}} "},
+                "zh": {"title": "个人{{兴趣}}"}
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "faIcon": "fa-solid fa-dog",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "label": null,
+                    "link": {"href": null, "tooltipString": null},
+                    "copyToClipboardButton": false,
+                    "locales": {
+                        "en": {
+                            "title": "{{Dogs}}",
+                            "text": "Always happy to meet a good dog."
+                        },
+                        "fr": {
+                            "title": "{{Chiens}}",
+                            "text": "Toujours content de rencontrer un bon chien."
+                        },
+                        "zh": {
+                            "title": "{{狗}}",
+                            "text": "总是很高兴遇见一只好狗。"
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "faIcon": "fa-solid fa-plane",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "label": null,
+                    "link": {"href": null, "tooltipString": null},
+                    "copyToClipboardButton": false,
+                    "locales": {
+                        "en": {
+                            "title": "{{Planes}}",
+                            "text": "Fascinated by aviation and how planes fly."
+                        },
+                        "fr": {
+                            "title": "{{Avions}}",
+                            "text": "Fasciné par l'aviation et le vol des avions."
+                        },
+                        "zh": {
+                            "title": "{{飞机}}",
+                            "text": "对航空以及飞机如何飞行充满好奇。"
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "faIcon": "fa-solid fa-hand-fist",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "label": null,
+                    "link": {"href": null, "tooltipString": null},
+                    "copyToClipboardButton": false,
+                    "locales": {
+                        "en": {
+                            "title": "{{Muay Thai}}",
+                            "text": "Training striking and staying in shape."
+                        },
+                        "fr": {
+                            "title": "{{Muay Thaï}}",
+                            "text": "M'entraîner au striking et rester en forme."
+                        },
+                        "zh": {
+                            "title": "{{泰拳}}",
+                            "text": "练习打击技术，保持身材。"
+                        }
+                    }
+                },
+                {
+                    "id": 4,
+                    "faIcon": "fa-solid fa-chess-knight",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "label": null,
+                    "link": {"href": null, "tooltipString": null},
+                    "copyToClipboardButton": false,
+                    "locales": {
+                        "en": {
+                            "title": "{{Chess}}",
+                            "text": "Playing games and working through puzzles."
+                        },
+                        "fr": {
+                            "title": "{{Échecs}}",
+                            "text": "Jouer des parties et résoudre des problèmes."
+                        },
+                        "zh": {
+                            "title": "{{国际象棋}}",
+                            "text": "下棋并破解棋题。"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

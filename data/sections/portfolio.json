@@ -1,0 +1,132 @@
+{
+    "title": {
+        "locales": {
+            "en": {
+                "title_short": "Portfolio",
+                "title_short_nav": "Portfolio",
+                "title_long_prefix": "Take a look at",
+                "title_long": "My {{Portfolio}}"
+            },
+            "es": {
+                "title_short": "Portafolio",
+                "title_short_nav": "Portafolio",
+                "title_long_prefix": "Explora",
+                "title_long": "Mi {{Portafolio}}"
+            },
+            "fr": {
+                "title_short": "Portfolio",
+                "title_short_nav": "Portfolio",
+                "title_long_prefix": "Découvrez",
+                "title_long": "Mon {{Portfolio}}"
+            },
+            "zh": {
+                "title_short": "作品集",
+                "title_short_nav": "作品集",
+                "title_long_prefix": "看看我的",
+                "title_long": "我的 {{作品集}}"
+            }
+        }
+    },
+
+    "articles": [
+        {
+            "id": 1,
+            "component": "ArticlePortfolio",
+            "locales": {
+                "en": {
+                    "category_all": "All",
+                    "category_apps": "Apps",
+                    "category_web": "Web",
+                    "category_utilities": "Utilities"
+                },
+                "fr": {
+                    "category_all": "Tout",
+                    "category_apps": "Apps",
+                    "category_web": "Web",
+                    "category_utilities": "Utilitaires"
+                },
+                "zh": {
+                    "category_all": "全部",
+                    "category_apps": "应用",
+                    "category_web": "网站",
+                    "category_utilities": "工具"
+                }
+            },
+            "settings": {
+                "categorize_by": ["category_apps"],
+                "order_items_by": "id",
+                "order_items_sort": "asc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "categoryId": "category_apps",
+                    "noteSlug": "safepulse",
+                    "img": "",
+                    "faIcon": "fa-solid fa-heart-pulse",
+                    "faIconColors": {"bg": "#E4002B", "fill": "#FFFFFF"},
+                    "preview": {
+                        "links": [
+                            {"href": "https://github.com/MitchellMarkGeorge/SafePulse", "tooltipString": "see_on_github", "faIcon": "fa-brands fa-github"}
+                        ],
+                        "screenshots": [
+
+                        ],
+                        "screenshotsAspectRatio": "",
+                        "youtubeVideo": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "SafePulse",
+                            "text": "A <b>1st place</b> hackathon-winning emergency-responder app (out of 200+ participants), featuring <b>real-time data ingestion</b> on <b>Firebase</b> and <b>GCP</b> to connect people in crisis with first responders.",
+                            "tags": ["Firebase", "GCP", "REST APIs"]
+                        },
+                        "fr": {
+                            "title": "SafePulse",
+                            "text": "Une application d'intervention d'urgence <b>primée 1re place</b> en hackathon (parmi plus de 200 participants), avec <b>ingestion de données en temps réel</b> sur <b>Firebase</b> et <b>GCP</b> pour relier les personnes en crise aux secouristes.",
+                            "tags": ["Firebase", "GCP", "REST APIs"]
+                        },
+                        "zh": {
+                            "title": "SafePulse",
+                            "text": "在 200 多名参赛者中荣获<b>第一名</b>的黑客松急救响应应用，基于 <b>Firebase</b> 和 <b>GCP</b> 实现<b>实时数据接入</b>，将身处危机的人与急救人员连接起来。",
+                            "tags": ["Firebase", "GCP", "REST APIs"]
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "categoryId": "category_apps",
+                    "noteSlug": "robobo",
+                    "img": "",
+                    "faIcon": "fa-solid fa-robot",
+                    "faIconColors": {"bg": "#2563EB", "fill": "#FFFFFF"},
+                    "preview": {
+                        "links": [
+                            {"href": "https://github.com/RaboboFriend", "tooltipString": "see_on_github", "faIcon": "fa-brands fa-github"}
+                        ],
+                        "screenshots": [],
+                        "screenshotsAspectRatio": "",
+                        "youtubeVideo": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "Robobo",
+                            "text": "University of Waterloo <b>SYDE capstone</b> (2025–2026). Affordable social robot for seniors — integrates <b>Amazon Alexa</b> with a custom AWS Lambda skill, <b>OpenAI</b> emotion-aware responses, and servo/LCD expressions driven by a <b>Raspberry Pi 5</b> and ESP32.",
+                            "tags": ["Raspberry Pi 5", "ESP32", "Python", "AWS Lambda", "OpenAI API"]
+                        },
+                        "fr": {
+                            "title": "Robobo",
+                            "text": "<b>Projet capstone SYDE</b> de l'Université de Waterloo (2025–2026). Robot social abordable pour personnes âgées — intègre <b>Amazon Alexa</b> avec un skill AWS Lambda personnalisé, des réponses émotionnellement adaptées via <b>OpenAI</b>, et des expressions servomoteur/LCD pilotées par un <b>Raspberry Pi 5</b> et un ESP32.",
+                            "tags": ["Raspberry Pi 5", "ESP32", "Python", "AWS Lambda", "OpenAI API"]
+                        },
+                        "zh": {
+                            "title": "Robobo",
+                            "text": "滑铁卢大学 <b>SYDE 毕业设计</b>（2025–2026）。面向老年人的低成本社交机器人——集成 <b>Amazon Alexa</b> 自定义 AWS Lambda 技能、<b>OpenAI</b> 情感感知回复，以及由 <b>Raspberry Pi 5</b> 和 ESP32 驱动的舵机与 LCD 表情。",
+                            "tags": ["Raspberry Pi 5", "ESP32", "Python", "AWS Lambda", "OpenAI API"]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

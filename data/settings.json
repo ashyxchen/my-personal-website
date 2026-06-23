@@ -1,0 +1,94 @@
+{
+    "developerSettings": {
+        "debugMode": false,
+        "fakeEmailRequests": false,
+        "stayOnThePreloaderScreen": false,
+        "version": "2.0.3"
+    },
+
+    "preloaderSettings": {
+        "enabled": false,
+        "title": "Ashton <strong>Chen</strong>",
+        "subtitle": "Embedded ML Engineer",
+        "logoOffset": {
+            "right": 14,
+            "top": 2,
+            "bottom": 0
+        }
+    },
+
+    "templateSettings": {
+        "animatedCursorEnabled": false,
+        "backgroundStyle": "plain",
+        "defaultLanguageId": "en",
+        "defaultThemeId": "light",
+        "fullscreenEnabled": true,
+        "showSpinnerOnThemeChange": false
+    },
+
+    "supportedLanguages": [
+        {
+            "name": "English",
+            "id": "en",
+            "flagUrl": "images/flags/en-us.png"
+        },
+        {
+            "name": "Français",
+            "id": "fr",
+            "flagUrl": "images/flags/fr.png"
+        },
+        {
+            "name": "简体中文",
+            "id": "zh",
+            "flagUrl": "images/flags/zh.png"
+        }
+    ],
+
+    "supportedThemes": [
+        {
+            "id": "dark",
+            "icon": "fa-solid fa-moon",
+            "dark": true,
+            "locales": {
+                "en": {"name": "Dark Mode"},
+                "fr": {"name": "Mode Sombre"},
+                "zh": {"name": "深色模式"}
+            }
+        },
+        {
+            "id": "light",
+            "icon": "fa-solid fa-sun",
+            "dark": false,
+            "locales": {
+                "en": {"name": "Light Mode"},
+                "fr": {"name": "Mode Clair"},
+                "zh": {"name": "浅色模式"}
+            }
+        }
+    ],
+
+    "consoleMessageForDevelopers": {
+        "title": "\uD83D\uDDA5️ Hey there, fellow developer!",
+        "items": [
+            {
+                "description": "Thanks for stopping by. This site is built with React.",
+                "list": [],
+                "listStyle": "none"
+            },
+            {
+                "description": "Other frameworks and plugins used in the project include:",
+                "list": [
+                    "Bootstrap 5: https://getbootstrap.com/",
+                    "Smooth Scrollbar: https://tinyurl.com/4yhm4n4a",
+                    "Swiper: https://swiperjs.com/",
+                    "EmailJS: https://www.emailjs.com/",
+                    "Font Awesome: https://fontawesome.com/",
+                    "PrimeIcons: https://primefaces.org/"
+                ],
+                "listStyle": "bulleted"
+            }
+        ]
+    },
+
+    "imagesToCache": []
+}
