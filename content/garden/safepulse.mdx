@@ -1,0 +1,50 @@
+---
+title: "SafePulse"
+slug: "safepulse"
+type: "project"
+summary: "A hackathon-winning emergency-responder app connecting people in crisis with first responders."
+status: "shipped"
+growth: "evergreen"
+planted: "2024-01-13"
+tended: "2024-01-14"
+area: "Applications"
+topics: ["real-time", "cloud", "safety"]
+tools: ["Firebase", "Google Cloud Platform", "REST APIs", "JavaScript"]
+hardware: []
+links:
+  - label: "GitHub"
+    href: "https://github.com/MitchellMarkGeorge/SafePulse"
+role: "Backend & real-time data"
+timeframe: "Jan 2024 · 36-hour hackathon"
+outcomes:
+  - "1st place out of 200+ participants"
+  - "Live emergency dispatch demo on real Firebase data"
+---
+
+SafePulse came out of a 36-hour hackathon. The brief I set for myself was simple:
+if someone is in trouble, the fewest possible seconds should pass between them
+asking for help and a responder seeing it.
+
+## The problem
+
+Emergency reporting usually means a phone call and a verbal description of where
+you are. That falls apart when the person can't speak, doesn't know the address,
+or there are dozens of simultaneous incidents to triage.
+
+## How I thought about it
+
+- **Real-time first.** The whole system is built around a live data stream rather
+  than request/response. A report writes to Firebase and every responder
+  dashboard updates instantly — no polling.
+- **Location as data, not prose.** Reports carry coordinates, so triage can sort
+  by proximity instead of parsing a text description.
+- **Cheap to run.** Firebase + GCP meant no server to babysit during the event,
+  and a free tier that comfortably handled the demo load.
+
+## What I'd do differently
+
+- Move triage ranking server-side (a Cloud Function) instead of on each client.
+- Add offline queueing so a dropped connection doesn't lose a report.
+
+This connects back to the [[hello-garden|garden overview]] — it's the most
+"shipped" thing in here, so it sits as an evergreen note.

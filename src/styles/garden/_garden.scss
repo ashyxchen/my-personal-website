@@ -37,6 +37,53 @@
     color: var(--theme-muted);
 }
 
+/* ---- Filters ---- */
+.garden-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+
+    &__group {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--theme-muted);
+        margin-right: 4px;
+    }
+}
+
+.garden-chip {
+    font: inherit;
+    font-size: 0.85rem;
+    line-height: 1;
+    padding: 6px 12px;
+    border: 1px solid var(--theme-standard-borders);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--theme-muted);
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+
+    &:hover {
+        border-color: var(--theme-links);
+        color: var(--theme-texts);
+    }
+
+    &--active {
+        border-color: var(--theme-primary);
+        background-color: var(--theme-primary);
+        color: #fff;
+    }
+}
+
 /* ---- Index list ---- */
 .garden-list {
     list-style: none;
@@ -192,4 +239,302 @@
             text-decoration: underline;
         }
     }
+}
+
+/* ---- Tabs ---- */
+.garden-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--theme-standard-borders);
+}
+
+.garden-tab {
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 8px 4px;
+    margin-bottom: -1px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--theme-muted);
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease;
+
+    &:hover {
+        color: var(--theme-texts);
+    }
+
+    &--active {
+        color: var(--theme-texts);
+        border-bottom-color: var(--theme-primary);
+    }
+
+    &__count {
+        display: inline-block;
+        margin-left: 6px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--theme-muted);
+        background: var(--theme-boards-background);
+        border-radius: 999px;
+        padding: 1px 8px;
+        vertical-align: middle;
+    }
+}
+
+/* ---- Static tag chips (non-interactive) ---- */
+.garden-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0;
+    margin: 0;
+}
+
+.garden-tag {
+    font-size: 0.78rem;
+    line-height: 1;
+    padding: 5px 10px;
+    border: 1px solid var(--theme-standard-borders);
+    border-radius: 999px;
+    color: var(--theme-muted);
+}
+
+/* ---- Status badge ---- */
+.garden-status {
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+
+    &--shipped {
+        color: #1f7a4d;
+        background: rgba(31, 122, 77, 0.12);
+    }
+
+    &--in-progress {
+        color: var(--theme-primary);
+        background: rgba(154, 75, 46, 0.12);
+    }
+
+    &--archived {
+        color: var(--theme-muted);
+        background: var(--theme-boards-background);
+    }
+}
+
+/* ---- Projects tab cards ---- */
+.garden-proj-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.garden-proj__link {
+    display: block;
+    padding: 20px;
+    border: 1px solid var(--theme-standard-borders);
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+
+    &:hover {
+        border-color: var(--theme-links);
+        background-color: var(--theme-boards-background);
+    }
+}
+
+.garden-proj__head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.garden-proj__title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.garden-proj__summary {
+    color: var(--theme-muted);
+    margin: 0 0 14px;
+}
+
+/* ---- Note-page project info box ---- */
+.garden-projbox {
+    margin: 0 0 40px;
+    padding: 20px 24px;
+    border: 1px solid var(--theme-standard-borders);
+    border-radius: 12px;
+    background: var(--theme-boards-background);
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 8px 16px;
+        padding: 8px 0;
+
+        & + & {
+            border-top: 1px solid var(--theme-standard-borders);
+        }
+    }
+
+    &__key {
+        flex: 0 0 120px;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--theme-muted);
+    }
+
+    &__val {
+        color: var(--theme-texts);
+    }
+
+    &__outcomes {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--theme-texts);
+
+        li {
+            margin-bottom: 4px;
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+
+        a {
+            color: var(--theme-links);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--theme-links-hover);
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    .garden-projbox__key {
+        flex-basis: 100%;
+    }
+}
+
+/* ---- Area groups + breadcrumb ---- */
+.garden-group {
+    margin-bottom: 36px;
+
+    & + .garden-group {
+        padding-top: 8px;
+    }
+}
+
+.garden-breadcrumb {
+    margin-bottom: 14px;
+
+    ol {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 6px;
+        padding: 0;
+        margin: 0;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--theme-muted);
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    li:not(:first-child)::before {
+        content: "\203a"; /* › */
+        color: var(--theme-muted);
+        opacity: 0.6;
+    }
+
+    a {
+        color: var(--theme-muted);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: color 0.15s ease, border-color 0.15s ease;
+
+        &:hover {
+            color: var(--theme-texts);
+            border-bottom-color: currentColor;
+        }
+    }
+
+    li[aria-current="page"] span,
+    li:last-child a {
+        color: var(--theme-texts);
+        font-weight: 600;
+    }
+
+    &--note {
+        margin-top: -8px;
+        margin-bottom: 20px;
+    }
+}
+
+/* ---- Area index (folder cards) ---- */
+.garden-areas {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+.garden-area__link {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 18px;
+    border: 1px solid var(--theme-standard-borders);
+    border-radius: 12px;
+    text-decoration: none;
+    background: var(--theme-boards-background);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+
+    &:hover {
+        border-color: var(--theme-primary);
+        transform: translateY(-2px);
+    }
+}
+
+.garden-area__name {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    color: var(--theme-texts);
+}
+
+.garden-area__count {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--theme-muted);
 }

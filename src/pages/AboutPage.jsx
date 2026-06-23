@@ -1,6 +1,7 @@
 import React from 'react'
 import {useData} from "/src/providers/DataProvider.jsx"
 import {useLanguage} from "/src/providers/LanguageProvider.jsx"
+import {useDocumentMeta} from "/src/garden/useDocumentMeta.js"
 import EditorialLayout from "/src/components/garden/EditorialLayout.jsx"
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -87,6 +88,11 @@ const AboutPage = () => {
     const langId = language.getSelectedLanguage()?.id || "en"
     const pick = (dict) => dict[langId] || dict.en
     const presentLabel = pick(LABELS.present)
+
+    useDocumentMeta({
+        title: "About",
+        description: "About Ashton Chen — a Systems Design Engineering student at the University of Waterloo working on embedded firmware, edge ML, and computer vision."
+    })
 
     const aboutSection = _section(data, "about")
     const bioArticle = _articleByComponent(aboutSection, "ArticleText")

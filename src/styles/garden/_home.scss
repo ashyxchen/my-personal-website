@@ -374,6 +374,9 @@ $editorial-measure: 880px;
 
     &__links {
         margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 24px;
 
         a {
             display: inline-flex;

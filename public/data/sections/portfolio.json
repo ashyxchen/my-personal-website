@@ -61,6 +61,7 @@
                 {
                     "id": 1,
                     "categoryId": "category_apps",
+                    "noteSlug": "safepulse",
                     "img": "",
                     "faIcon": "fa-solid fa-heart-pulse",
                     "faIconColors": {"bg": "#E4002B", "fill": "#FFFFFF"},
@@ -95,6 +96,7 @@
                 {
                     "id": 2,
                     "categoryId": "category_apps",
+                    "noteSlug": "robobo",
                     "img": "",
                     "faIcon": "fa-solid fa-robot",
                     "faIconColors": {"bg": "#2563EB", "fill": "#FFFFFF"},

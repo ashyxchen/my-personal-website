@@ -13,12 +13,6 @@
             "faIcon": "fa-solid fa-graduation-cap"
         },
         {
-            "id": "skills",
-            "categoryId": "showcase",
-            "jsonPath": "/data/sections/skills.json",
-            "faIcon": "fa-solid fa-tools"
-        },
-        {
             "id": "experience",
             "categoryId": "background",
             "jsonPath": "/data/sections/experience.json",
@@ -29,12 +23,6 @@
             "categoryId": "showcase",
             "jsonPath": "/data/sections/portfolio.json",
             "faIcon": "fa-solid fa-folder-open"
-        },
-        {
-            "id": "contact",
-            "categoryId": "more",
-            "jsonPath": "/data/sections/contact.json",
-            "faIcon": "fa-solid fa-pen-to-square"
         }
     ]
 }

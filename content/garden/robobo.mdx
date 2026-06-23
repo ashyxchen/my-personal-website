@@ -1,0 +1,54 @@
+---
+title: "Robobo"
+slug: "robobo"
+type: "project"
+summary: "An affordable social robot for seniors — my University of Waterloo SYDE capstone."
+status: "in-progress"
+growth: "budding"
+planted: "2025-09-01"
+tended: "2026-06-01"
+area: "Embedded Systems"
+topics: ["robotics", "embedded", "human-robot-interaction"]
+tools: ["Python", "AWS Lambda", "OpenAI API", "Amazon Alexa Skills"]
+hardware: ["Raspberry Pi 5", "ESP32", "Servo motors", "LCD display", "SolidWorks"]
+links:
+  - label: "GitHub"
+    href: "https://github.com/RaboboFriend"
+role: "Embedded firmware & systems integration"
+timeframe: "2025–2026 · SYDE capstone"
+outcomes:
+  - "End-to-end voice → emotion → physical-expression loop"
+  - "Bill of materials kept under an affordability target"
+---
+
+Robobo is my Systems Design Engineering capstone: a social robot meant to be
+affordable enough that an older adult living alone could actually have one. It
+sits at the intersection of firmware, cloud, and physical design — which is
+exactly the boundary I like working at.
+
+## System overview
+
+The robot is really three subsystems that have to agree on timing:
+
+1. **Voice & language.** Amazon Alexa captures intent and hands it to a custom
+   AWS Lambda skill; OpenAI generates an emotion-aware response.
+2. **Expression.** A Raspberry Pi 5 turns that response into a "mood," and an
+   ESP32 drives the servos and LCD face so the robot physically reacts.
+3. **Mechanical.** The enclosure and linkages are modelled in SolidWorks around
+   off-the-shelf servos to keep cost down.
+
+## Engineering decisions
+
+- **Split the brain from the body.** The Pi does the heavy, non-real-time work
+  (network, language); the ESP32 owns the hard-real-time motion. They talk over
+  a simple serial protocol so neither blocks the other.
+- **Design for cost from day one.** Every part choice was checked against a
+  target bill of materials — the affordability constraint is the point, not an
+  afterthought.
+
+## Open questions I'm still working through
+
+- How expressive can servo + LCD be before it feels uncanny?
+- Where should the emotion model live long-term — cloud, or on-device?
+
+Related reading: [[embedded-ml|where firmware meets machine learning]].

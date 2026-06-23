@@ -166,13 +166,21 @@ This file is **not** part of the published site.
   digital garden) instead of the old "Machine Learning Engineer" copy. Removed
   the template's generic tab favicon (blank `data:,` icon). Renamed the package
   to `ashton-chen-personal-site`.
-- [ ] Garden filtering: filter the index by topic + growth stage; a growth-stage
-  legend.
-- [ ] Per-note SEO meta (title / description / og), topic index pages.
-- [ ] Resource cleanup (deferred — touches data/assets): unused section data
-  (`skills.json`, `contact.json`, no page renders them), template demo images in
-  `public/images/`, the company logos in `images/logos/` (the About timeline is
-  text-only), and obsolete tooling (`npm/` article generators).
+- [x] Garden filtering: `GardenIndexPage` now filters the index by growth stage
+  and topic via chip toggles (`getAllTopics` / `GROWTH_STAGES`); the growth-stage
+  row doubles as the legend. Styles in `_garden.scss` (`.garden-filters`,
+  `.garden-chip`).
+- [x] Per-note (and per-page) SEO meta: dependency-free `useDocumentMeta` hook
+  (`src/garden/useDocumentMeta.js`) sets `document.title` + description / OG /
+  Twitter tags per route and restores them on unmount. Wired into `NotePage`
+  (uses note title + summary), `GardenIndexPage`, `ProjectsPage`, `AboutPage`.
+- [ ] Topic index pages (per-topic listing routes) — still optional.
+- [x] Resource cleanup: removed unused section data (`skills.json`,
+  `contact.json`) and trimmed their entries from `sections.json` + the now-empty
+  `more` category from `categories.json`; deleted `images/logos/` and the
+  `about-texts-image-1.png` demo image (kept the in-use flags, `og-image.jpg`,
+  `profile-picture.jpg`, and the preloader `logo.svg`); removed the `npm/`
+  article-generator tooling and its `resume:*` package scripts.
 - [ ] Optional later: graph view, RSS, search; show company logos in the About
   timeline.
 
@@ -210,10 +218,48 @@ nav, dead buttons/widgets) and `src/hooks/{parser.js,models/*}`.
 
 ### Still open (Phase 6)
 
-- Garden topic / growth-stage filtering + legend.
-- Per-note SEO meta, topic index pages.
-- Optional resource cleanup (unused data JSON, demo images, logos, `npm/`
-  tooling).
+- Topic index pages (per-topic listing routes).
+- Optional: graph view, RSS, search; company logos in the About timeline.
+
+### Phase 7 — Wiki / Projects split inside the Garden ✅ DONE
+
+- [x] Notes now carry a `type` (`wiki` default | `project`) in frontmatter; the
+  loader (`src/garden/loader.js`) reads it plus project-only fields (`status`,
+  `tools`, `hardware`, `links`, optional `role` / `timeframe` / `outcomes`) and
+  exposes `getNotesByType()`.
+- [x] `GardenIndexPage` is now two tabs: **Wiki** (knowledge base — filter by
+  growth stage + topic, list layout) and **Projects** (engineering write-ups —
+  filter by status + tool, card layout with status badge + tool/hardware chips).
+- [x] `NotePage` renders a project info box (status, role, tools, hardware/CAD,
+  outcomes, links) for `type: project` notes, and the usual growth/area meta for
+  wiki notes.
+- [x] Merge: portfolio cards on `/projects` link into their Garden write-ups via
+  a `noteSlug` on each `portfolio.json` item ("Read the write-up →"), GitHub kept
+  as a secondary link. Seeded `safepulse.mdx` + `robobo.mdx` project notes.
+- [x] Styles for tabs, project cards, status badges, static tag chips, and the
+  note-page project box in `_garden.scss`.
+- [x] Verified: `npm run build` passes (493 modules).
+
+### Phase 8 — Hierarchical, browsable areas ✅ DONE
+
+- [x] `area` frontmatter is now a `/`-separated path (e.g.
+  `Engineering / Machine Learning`). The loader splits it into `areaPath`
+  (display segments) + `areaSlugPath` (URL slugs) and builds an **area registry**
+  from every path prefix, so each level becomes a node automatically — no manual
+  registration.
+- [x] New loader API: `getArea()`, `getSubAreas()`, `getNotesInArea()`
+  (with `includeDescendants`), and `slugifyAreaSegment()`.
+- [x] New route `/garden/area/*` → `AreaPage` (`src/pages/AreaPage.jsx`): lists
+  sub-areas as folder cards (with subtree note counts) plus the notes filed
+  directly in that area; `/garden/area` lists top-level areas.
+- [x] Reusable `AreaBreadcrumb` (`src/components/garden/AreaBreadcrumb.jsx`)
+  renders linked breadcrumbs. Used on note pages, the Wiki tab group headers, and
+  area pages — every segment links to its area page.
+- [x] Styles: breadcrumb link hover states + `.garden-areas` folder-card grid in
+  `_garden.scss`.
+- [x] Verified: `npm run build` passes (495 modules). Deep area URLs rely on the
+  existing `404.html` SPA fallback on GitHub Pages.
+
 
 ## Further considerations (decided)
 

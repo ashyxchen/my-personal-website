@@ -8,12 +8,23 @@
  * Frontmatter schema (per note):
  *   title    {string}   - display title
  *   slug     {string}   - URL slug (defaults to the filename)
+ *   type     {string}   - "wiki" (default) | "project"
  *   summary  {string}   - one-line description for the garden index
  *   growth   {string}   - "seedling" | "budding" | "evergreen"
  *   planted  {string}   - ISO date (YYYY-MM-DD)
  *   tended   {string}   - ISO date (YYYY-MM-DD), last meaningful edit
  *   topics   {string[]} - freeform tags
- *   area     {string}   - primary knowledge-base cluster (e.g. "Machine Learning")
+ *   area     {string}   - hierarchical knowledge-base path, "/"-separated
+ *                         (e.g. "Engineering / Machine Learning")
+ *
+ * Project-only frontmatter (type: "project"):
+ *   status    {string}   - "in-progress" | "shipped" | "archived"
+ *   tools     {string[]} - languages / frameworks / libraries
+ *   hardware  {string[]} - CAD / hardware / lab tools
+ *   links     {Array<{label, href}>} - GitHub / demo / write-up links
+ *   role      {string}   - optional role on the project
+ *   timeframe {string}   - optional human date range
+ *   outcomes  {string[]} - optional key outcomes / metrics
  */
 
 const GROWTH_STAGES = {
@@ -40,6 +51,19 @@ const noteSources = import.meta.glob("/content/garden/*.mdx", {
  */
 function slugFromPath(path) {
     return path.split("/").pop().replace(/\.mdx$/, "").toLowerCase()
+}
+
+/**
+ * Turn a display area segment (e.g. "Machine Learning") into a URL-safe slug.
+ * @param {string} segment
+ * @returns {string}
+ */
+export function slugifyAreaSegment(segment) {
+    return String(segment || "")
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "")
 }
 
 /**
@@ -72,18 +96,54 @@ for (const path of Object.keys(noteModules)) {
     notesBySlug[slug] = {
         slug: slug,
         title: frontmatter.title || slug,
+        type: frontmatter.type === "project" ? "project" : "wiki",
         summary: frontmatter.summary || "",
         growth: frontmatter.growth || "seedling",
         planted: frontmatter.planted || null,
         tended: frontmatter.tended || frontmatter.planted || null,
         topics: Array.isArray(frontmatter.topics) ? frontmatter.topics : [],
         area: frontmatter.area || "Uncategorized",
+        areaPath: String(frontmatter.area || "Uncategorized")
+            .split("/")
+            .map((segment) => segment.trim())
+            .filter(Boolean),
+        areaSlugPath: String(frontmatter.area || "Uncategorized")
+            .split("/")
+            .map((segment) => slugifyAreaSegment(segment))
+            .filter(Boolean),
+        status: frontmatter.status || null,
+        tools: Array.isArray(frontmatter.tools) ? frontmatter.tools : [],
+        hardware: Array.isArray(frontmatter.hardware) ? frontmatter.hardware : [],
+        links: Array.isArray(frontmatter.links) ? frontmatter.links : [],
+        role: frontmatter.role || null,
+        timeframe: frontmatter.timeframe || null,
+        outcomes: Array.isArray(frontmatter.outcomes) ? frontmatter.outcomes : [],
         Component: mod.default,
         frontmatter: frontmatter
     }
 
     const source = noteSources[path] || ""
     outboundBySlug[slug] = extractOutboundSlugs(source).filter((s) => s !== slug)
+}
+
+// Build an area registry: every prefix of every note's area path becomes a
+// browsable node, keyed by its slugified path (e.g. "engineering/machine-learning").
+const areasBySlugPath = {}
+
+for (const note of Object.values(notesBySlug)) {
+    for (let depth = 1; depth <= note.areaPath.length; depth++) {
+        const segments = note.areaPath.slice(0, depth)
+        const slugSegments = note.areaSlugPath.slice(0, depth)
+        const slugPath = slugSegments.join("/")
+        if (!areasBySlugPath[slugPath]) {
+            areasBySlugPath[slugPath] = {
+                slugPath: slugPath,
+                segments: segments,
+                slugSegments: slugSegments,
+                label: segments[segments.length - 1]
+            }
+        }
+    }
 }
 
 // Invert the outbound graph into backlinks.
@@ -105,6 +165,14 @@ export function getAllNotes() {
     return Object.values(notesBySlug).sort((a, b) => {
         return String(b.tended || "").localeCompare(String(a.tended || ""))
     })
+}
+
+/**
+ * @param {string} type - "wiki" | "project"
+ * @returns {object[]} notes of the given type, newest-tended first
+ */
+export function getNotesByType(type) {
+    return getAllNotes().filter((note) => note.type === type)
 }
 
 /**
@@ -151,6 +219,52 @@ export function getAllAreas() {
     for (const note of Object.values(notesBySlug))
         areas.add(note.area)
     return [...areas].sort()
+}
+
+/**
+ * @param {string} slugPath - slugified area path, e.g. "engineering/machine-learning"
+ * @returns {object|null} {slugPath, segments, slugSegments, label}
+ */
+export function getArea(slugPath) {
+    return areasBySlugPath[String(slugPath || "").toLowerCase()] || null
+}
+
+/**
+ * Immediate child areas of the given path ("" or null = top-level areas).
+ * @param {string} [slugPath]
+ * @returns {object[]} child area nodes, alphabetical by label
+ */
+export function getSubAreas(slugPath) {
+    const prefix = slugPath ? String(slugPath).toLowerCase().split("/") : []
+    const children = []
+    for (const area of Object.values(areasBySlugPath)) {
+        if (area.slugSegments.length !== prefix.length + 1)
+            continue
+        if (prefix.every((seg, i) => area.slugSegments[i] === seg))
+            children.push(area)
+    }
+    return children.sort((a, b) => a.label.localeCompare(b.label))
+}
+
+/**
+ * Notes filed under the given area path.
+ * @param {string} slugPath - slugified area path ("" = everything)
+ * @param {{includeDescendants?: boolean}} [options]
+ * @returns {object[]} matching notes, newest-tended first
+ */
+export function getNotesInArea(slugPath, options) {
+    const includeDescendants = !!(options && options.includeDescendants)
+    const target = String(slugPath || "").toLowerCase()
+    return getAllNotes().filter((note) => {
+        const notePath = note.areaSlugPath.join("/")
+        if (notePath === target)
+            return true
+        if (includeDescendants && target !== "")
+            return notePath.startsWith(target + "/")
+        if (includeDescendants && target === "")
+            return true
+        return false
+    })
 }
 
 /**

@@ -1,6 +1,8 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 import {useData} from "/src/providers/DataProvider.jsx"
 import {useLanguage} from "/src/providers/LanguageProvider.jsx"
+import {useDocumentMeta} from "/src/garden/useDocumentMeta.js"
 import EditorialLayout from "/src/components/garden/EditorialLayout.jsx"
 
 const INTRO = {
@@ -22,6 +24,7 @@ const _getProjects = (data, langId) => {
         const locale = item.locales?.[langId] || item.locales?.en || {}
         return {
             id: item.id,
+            noteSlug: item.noteSlug || null,
             title: locale.title,
             text: _emph(locale.text || ""),
             tags: locale.tags || [],
@@ -36,6 +39,11 @@ const ProjectsPage = () => {
     const langId = language.getSelectedLanguage()?.id || "en"
     const pick = (dict) => dict[langId] || dict.en
 
+    useDocumentMeta({
+        title: "Projects",
+        description: "Projects by Ashton Chen at the boundary between hardware and machine learning — embedded firmware, edge ML, and computer vision."
+    })
+
     const projects = _getProjects(data, langId)
 
     return (
@@ -49,7 +57,11 @@ const ProjectsPage = () => {
                 <ul className="proj-list">
                     {projects.map(project => (
                         <li key={project.id} className="proj-item">
-                            <h2 className="proj-item__title">{project.title}</h2>
+                            <h2 className="proj-item__title">
+                                {project.noteSlug
+                                    ? <Link to={`/garden/${project.noteSlug}`}>{project.title}</Link>
+                                    : project.title}
+                            </h2>
                             <div
                                 className="proj-item__text"
                                 dangerouslySetInnerHTML={{__html: project.text}}
@@ -63,21 +75,24 @@ const ProjectsPage = () => {
                                 </ul>
                             )}
 
-                            {project.links.length > 0 && (
-                                <div className="proj-item__links">
-                                    {project.links.map((link, index) => (
-                                        <a
-                                            key={index}
-                                            href={link.href}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            <i className={link.faIcon} aria-hidden="true"/>
-                                            <span>View on GitHub</span>
-                                        </a>
-                                    ))}
-                                </div>
-                            )}
+                            <div className="proj-item__links">
+                                {project.noteSlug && (
+                                    <Link to={`/garden/${project.noteSlug}`} className="proj-item__writeup">
+                                        Read the write-up →
+                                    </Link>
+                                )}
+                                {project.links.map((link, index) => (
+                                    <a
+                                        key={index}
+                                        href={link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <i className={link.faIcon} aria-hidden="true"/>
+                                        <span>View on GitHub</span>
+                                    </a>
+                                ))}
+                            </div>
                         </li>
                     ))}
                 </ul>

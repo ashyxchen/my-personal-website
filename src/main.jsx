@@ -17,6 +17,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import HomePage from "/src/pages/HomePage.jsx"
 import GardenIndexPage from "/src/pages/GardenIndexPage.jsx"
 import NotePage from "/src/pages/NotePage.jsx"
+import AreaPage from "/src/pages/AreaPage.jsx"
 import ProjectsPage from "/src/pages/ProjectsPage.jsx"
 import AboutPage from "/src/pages/AboutPage.jsx"
 
@@ -61,6 +62,7 @@ const AppRoutes = () => {
             <Route path="/projects" element={<ProjectsPage/>}/>
             <Route path="/about" element={<AboutPage/>}/>
             <Route path="/garden" element={<GardenIndexPage/>}/>
+            <Route path="/garden/area/*" element={<AreaPage/>}/>
             <Route path="/garden/:slug" element={<NotePage/>}/>
             <Route path="*" element={<HomePage/>}/>
         </Routes>

@@ -26,15 +26,6 @@
                 "fr": {"title": "Vitrine"},
                 "zh": {"title": "作品"}
             }
-        },
-        {
-            "id": "more",
-            "faIcon": "fa-regular fa-object-ungroup",
-            "locales": {
-                "en": {"title": "More"},
-                "fr": {"title": "Plus"},
-                "zh": {"title": "更多"}
-            }
         }
     ]
 }
