@@ -5,10 +5,19 @@
 
 /* ---- Body scroll unlock ----
  * The template locks <body> to a fixed viewport on desktop for its slideshow.
- * Editorial routes add `body-flow` so these long-scroll pages can scroll. */
+ * Editorial routes add `body-flow` so these long-scroll pages can scroll.
+ *
+ * Important: we must NOT make <body> itself the scroll container. The template
+ * sets `overflow-x: hidden` on <body>, and pairing that with `overflow-y: auto`
+ * turns <body> into a non-root scroller. With a position:fixed cursor overlay
+ * and a sticky header present, Chromium intermittently fails to repaint that
+ * scroller during fast scrolling, flashing the page blank. Using `overflow-x:
+ * clip` hides horizontal overflow WITHOUT creating a scroll container, so the
+ * viewport/document scrolls naturally and fixed/sticky layers composite right. */
 body.body-flow {
     position: static !important;
-    overflow-y: auto !important;
+    overflow-x: clip !important;
+    overflow-y: visible !important;
     height: auto !important;
 }
 
