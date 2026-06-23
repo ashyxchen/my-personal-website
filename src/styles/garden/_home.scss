@@ -32,8 +32,7 @@ $editorial-measure: 880px;
     position: sticky;
     top: 0;
     z-index: 50;
-    backdrop-filter: blur(10px);
-    background-color: color-mix(in srgb, var(--theme-background) 82%, transparent);
+    background-color: color-mix(in srgb, var(--theme-background) 94%, transparent);
     border-bottom: 1px solid var(--theme-standard-borders);
 
     &__inner {
