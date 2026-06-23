@@ -13,7 +13,12 @@ import LocationProvider from "/src/providers/LocationProvider.jsx"
 import FeedbacksProvider from "/src/providers/FeedbacksProvider.jsx"
 import InputProvider from "/src/providers/InputProvider.jsx"
 import NavigationProvider from "/src/providers/NavigationProvider.jsx"
-import Portfolio from "/src/components/Portfolio.jsx"
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import HomePage from "/src/pages/HomePage.jsx"
+import GardenIndexPage from "/src/pages/GardenIndexPage.jsx"
+import NotePage from "/src/pages/NotePage.jsx"
+import ProjectsPage from "/src/pages/ProjectsPage.jsx"
+import AboutPage from "/src/pages/AboutPage.jsx"
 
 /** Initialization Script... **/
 let container = null
@@ -33,11 +38,32 @@ document.addEventListener('DOMContentLoaded', function(event) {
  */
 const App = () => {
     return (
-        <AppEssentialsWrapper>
-            <AppCapabilitiesWrapper>
-                <Portfolio/>
-            </AppCapabilitiesWrapper>
-        </AppEssentialsWrapper>
+        <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+            <AppEssentialsWrapper>
+                <AppCapabilitiesWrapper>
+                    <AppRoutes/>
+                </AppCapabilitiesWrapper>
+            </AppEssentialsWrapper>
+        </BrowserRouter>
+    )
+}
+
+/**
+ * Top-level route table. The home route preserves the existing portfolio
+ * experience; the garden routes are the new MDX-backed knowledge base.
+ * @return {JSX.Element}
+ * @constructor
+ */
+const AppRoutes = () => {
+    return (
+        <Routes>
+            <Route path="/" element={<HomePage/>}/>
+            <Route path="/projects" element={<ProjectsPage/>}/>
+            <Route path="/about" element={<AboutPage/>}/>
+            <Route path="/garden" element={<GardenIndexPage/>}/>
+            <Route path="/garden/:slug" element={<NotePage/>}/>
+            <Route path="*" element={<HomePage/>}/>
+        </Routes>
     )
 }
 
@@ -55,9 +81,6 @@ const AppEssentialsWrapper = ({children}) => {
     const [settings, setSettings] = useState()
 
     useEffect(() => {
-        if (window.location.pathname !== utils.file.BASE_URL)
-            window.history.pushState({}, '', utils.file.BASE_URL)
-
         utils.file.loadJSON("/data/settings.json").then(response => {
             _applyDeveloperSettings(response)
             setSettings(response)

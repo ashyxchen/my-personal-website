@@ -1,0 +1,195 @@
+/**
+ * Garden styling — Phase 1 baseline.
+ * Intentionally minimal and readable; the warm editorial design system lands in
+ * Phase 2 (see REDESIGN.md). Uses existing theme CSS variables so it already
+ * respects the light/dark toggle.
+ */
+
+.garden-page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+    color: var(--theme-texts);
+
+    h1 {
+        font-family: 'Fraunces', Georgia, serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+    }
+
+    &__header {
+        margin-bottom: 40px;
+
+        h1 {
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: var(--theme-muted);
+            max-width: 60ch;
+            font-size: 1.05rem;
+        }
+    }
+}
+
+.garden-empty {
+    color: var(--theme-muted);
+}
+
+/* ---- Index list ---- */
+.garden-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &__link {
+        display: flex;
+        gap: 16px;
+        padding: 16px;
+        border: 1px solid var(--theme-standard-borders);
+        border-radius: 12px;
+        text-decoration: none;
+        color: inherit;
+        transition: border-color 0.15s ease, background-color 0.15s ease;
+
+        &:hover {
+            border-color: var(--theme-links);
+            background-color: var(--theme-boards-background);
+        }
+    }
+
+    &__growth {
+        font-size: 1.5rem;
+        line-height: 1.4;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__title {
+        font-weight: 600;
+    }
+
+    &__summary {
+        color: var(--theme-muted);
+    }
+
+    &__meta {
+        font-size: 0.85rem;
+        color: var(--theme-muted);
+        opacity: 0.8;
+    }
+}
+
+/* ---- Note page ---- */
+.garden-note {
+    &__back {
+        margin-bottom: 24px;
+
+        a {
+            color: var(--theme-links);
+            text-decoration: none;
+        }
+    }
+
+    &__header {
+        margin-bottom: 32px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--theme-standard-borders);
+    }
+
+    &__meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 12px;
+        font-size: 0.9rem;
+        color: var(--theme-muted);
+    }
+
+    &__topics {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 0;
+        margin: 16px 0 0;
+        font-size: 0.85rem;
+        color: var(--theme-muted);
+    }
+}
+
+.garden-prose {
+    font-size: 1.08rem;
+    line-height: 1.7;
+    max-width: 65ch;
+    font-optical-sizing: auto;
+
+    h2 {
+        font-family: 'Fraunces', Georgia, serif;
+        font-weight: 600;
+        margin-top: 40px;
+        margin-bottom: 16px;
+    }
+
+    p, ul, ol {
+        margin-bottom: 20px;
+    }
+
+    a {
+        color: var(--theme-links);
+
+        &:hover {
+            color: var(--theme-links-hover);
+        }
+    }
+
+    .wiki-link {
+        text-decoration: underline;
+        text-decoration-style: dotted;
+    }
+}
+
+.garden-callout {
+    border-left: 3px solid var(--theme-links);
+    background-color: var(--theme-boards-background);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 20px;
+}
+
+.garden-backlinks {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--theme-standard-borders);
+
+    h2 {
+        font-size: 1.1rem;
+        margin-bottom: 16px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    a {
+        color: var(--theme-links);
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

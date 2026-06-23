@@ -129,22 +129,22 @@
                 {
                     "id": 5,
                     "img": "",
-                    "faIcon": "fa-solid fa-flask",
+                    "faIcon": "fa-solid fa-memory",
                     "faIconColors": {"bg": "", "fill": ""},
                     "date": {"year": null, "month": null},
                     "link": {"href": "", "tooltipString": ""},
                     "locales": {
                         "en": {
-                            "title": "Reproducible {{ML}}",
-                            "text": "I track experiments with MLflow so every result can be reproduced."
+                            "title": "Embedded {{Firmware}}",
+                            "text": "I write firmware for microcontrollers and embedded Linux, with I2C, SPI, and UART communication between MCUs."
                         },
                         "fr": {
-                            "title": "{{ML}} reproductible",
-                            "text": "Je suis les expériences avec MLflow pour que chaque résultat soit reproductible."
+                            "title": "Firmware {{embarqué}}",
+                            "text": "J'écris du firmware pour microcontrôleurs et Linux embarqué, avec communication I2C, SPI et UART entre MCU."
                         },
                         "zh": {
-                            "title": "可复现的 {{ML}}",
-                            "text": "我使用 MLflow 跟踪实验，确保每个结果都可复现。"
+                            "title": "{{嵌入式}}固件",
+                            "text": "我为微控制器和嵌入式 Linux 编写固件，实现 MCU 之间的 I2C、SPI 和 UART 通信。"
                         }
                     }
                 }

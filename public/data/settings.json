@@ -7,9 +7,9 @@
     },
 
     "preloaderSettings": {
-        "enabled": true,
+        "enabled": false,
         "title": "Ashton <strong>Chen</strong>",
-        "subtitle": "Machine Learning Engineer",
+        "subtitle": "Embedded ML Engineer",
         "logoOffset": {
             "right": 14,
             "top": 2,
@@ -18,8 +18,8 @@
     },
 
     "templateSettings": {
-        "animatedCursorEnabled": true,
-        "backgroundStyle": "animated",
+        "animatedCursorEnabled": false,
+        "backgroundStyle": "plain",
         "defaultLanguageId": "en",
         "defaultThemeId": "light",
         "fullscreenEnabled": true,

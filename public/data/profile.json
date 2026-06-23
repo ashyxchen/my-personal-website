@@ -14,10 +14,10 @@
             "localized_name_stylized": " [[Ashton {{Chen}}]]",
             "status_message_available_for_freelance": "Available for freelance!",
             "roles": [
-                "Machine Learning Engineer",
+                "Embedded ML Engineer",
+                "Firmware Engineer",
                 "Computer Vision Engineer",
-                "MLOps Engineer",
-                "Deep Learning Researcher"
+                "Edge AI Engineer"
             ],
             "name_pronunciation_ipa": "/ˈæʃtən tʃɛn/",
             "name_pronunciation_audio_url": "audio/english-name-pronunciation.mp3"
@@ -25,10 +25,10 @@
         "fr": {
             "status_message_available_for_freelance": "Disponible pour freelance !",
             "roles": [
-                "Ingénieur Machine Learning",
-                "Ingénieur Vision par Ordinateur",
-                "Ingénieur MLOps",
-                "Chercheur en Deep Learning"
+                "Ingénieur ML embarqué",
+                "Ingénieur firmware",
+                "Ingénieur vision par ordinateur",
+                "Ingénieur Edge AI"
             ]
         },
         "zh": {
@@ -36,10 +36,10 @@
             "localized_name_stylized": " [[Ashton {{Chen}}]]",
             "status_message_available_for_freelance": "可接自由职业项目！",
             "roles": [
-                "机器学习工程师",
+                "嵌入式机器学习工程师",
+                "固件工程师",
                 "计算机视觉工程师",
-                "MLOps 工程师",
-                "深度学习研究员"
+                "边缘 AI 工程师"
             ]
         }
     }

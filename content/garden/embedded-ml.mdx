@@ -1,0 +1,23 @@
+---
+title: "Where Firmware Meets Machine Learning"
+slug: "embedded-ml"
+summary: "Notes on running ML models on constrained hardware, and why the boundary is the interesting part."
+growth: "seedling"
+planted: "2026-06-22"
+tended: "2026-06-22"
+topics: ["embedded", "machine-learning", "edge-ai"]
+area: "Machine Learning"
+---
+
+Most ML work assumes a server with a GPU. The interesting problems start when you
+take that away — a microcontroller, a few hundred kilobytes of RAM, a power budget
+measured in milliwatts.
+
+## Things I want to write up here
+
+- Quantization (int8 / int4) and what actually breaks when you do it.
+- The handoff between firmware and the inference runtime — who owns the buffer?
+- Getting a model from PyTorch to something that runs on an ESP32.
+
+This note is a seedling and will grow as I work through my capstone. It connects
+back to the [[hello-garden|garden overview]].

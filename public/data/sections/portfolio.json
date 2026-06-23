@@ -66,7 +66,7 @@
                     "faIconColors": {"bg": "#E4002B", "fill": "#FFFFFF"},
                     "preview": {
                         "links": [
-                            {"href": "https://github.com/yuxstar1444", "tooltipString": "see_on_github", "faIcon": "fa-brands fa-github"}
+                            {"href": "https://github.com/MitchellMarkGeorge/SafePulse", "tooltipString": "see_on_github", "faIcon": "fa-brands fa-github"}
                         ],
                         "screenshots": [
 
@@ -89,6 +89,38 @@
                             "title": "SafePulse",
                             "text": "在 200 多名参赛者中荣获<b>第一名</b>的黑客松急救响应应用，基于 <b>Firebase</b> 和 <b>GCP</b> 实现<b>实时数据接入</b>，将身处危机的人与急救人员连接起来。",
                             "tags": ["Firebase", "GCP", "REST APIs"]
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "categoryId": "category_apps",
+                    "img": "",
+                    "faIcon": "fa-solid fa-robot",
+                    "faIconColors": {"bg": "#2563EB", "fill": "#FFFFFF"},
+                    "preview": {
+                        "links": [
+                            {"href": "https://github.com/RaboboFriend", "tooltipString": "see_on_github", "faIcon": "fa-brands fa-github"}
+                        ],
+                        "screenshots": [],
+                        "screenshotsAspectRatio": "",
+                        "youtubeVideo": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "Robobo",
+                            "text": "University of Waterloo <b>SYDE capstone</b> (2025–2026). Affordable social robot for seniors — integrates <b>Amazon Alexa</b> with a custom AWS Lambda skill, <b>OpenAI</b> emotion-aware responses, and servo/LCD expressions driven by a <b>Raspberry Pi 5</b> and ESP32.",
+                            "tags": ["Raspberry Pi 5", "ESP32", "Python", "AWS Lambda", "OpenAI API"]
+                        },
+                        "fr": {
+                            "title": "Robobo",
+                            "text": "<b>Projet capstone SYDE</b> de l'Université de Waterloo (2025–2026). Robot social abordable pour personnes âgées — intègre <b>Amazon Alexa</b> avec un skill AWS Lambda personnalisé, des réponses émotionnellement adaptées via <b>OpenAI</b>, et des expressions servomoteur/LCD pilotées par un <b>Raspberry Pi 5</b> et un ESP32.",
+                            "tags": ["Raspberry Pi 5", "ESP32", "Python", "AWS Lambda", "OpenAI API"]
+                        },
+                        "zh": {
+                            "title": "Robobo",
+                            "text": "滑铁卢大学 <b>SYDE 毕业设计</b>（2025–2026）。面向老年人的低成本社交机器人——集成 <b>Amazon Alexa</b> 自定义 AWS Lambda 技能、<b>OpenAI</b> 情感感知回复，以及由 <b>Raspberry Pi 5</b> 和 ESP32 驱动的舵机与 LCD 表情。",
+                            "tags": ["Raspberry Pi 5", "ESP32", "Python", "AWS Lambda", "OpenAI API"]
                         }
                     }
                 }
