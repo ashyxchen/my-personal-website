@@ -10,7 +10,7 @@ import remarkWikiLink from './src/garden/remark-wiki-link.js'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    base: '/my-personal-website/',
+    base: '/',
     plugins: [
         {
             enforce: 'pre',
