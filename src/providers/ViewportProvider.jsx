@@ -4,7 +4,7 @@
  * @description This provider tracks the viewport size and scroll position, and provides utility functions to manage breakpoints and layout constraints.
  */
 
-import React, {createContext, useContext, useEffect, useState} from 'react'
+import React, {createContext, useContext, useEffect, useRef, useState} from 'react'
 import {useUtils} from "/src/hooks/utils.js"
 import {useScheduler} from "/src/hooks/scheduler.js"
 import {useData} from "/src/providers/DataProvider.jsx"
@@ -23,6 +23,7 @@ function ViewportProvider({ children }) {
     const [innerHeight, setInnerHeight] = useState(window.innerHeight)
     const [didCreateListeners, setDidCreateListeners] = useState(false)
     const [clipboardText, setClipboardText] = useState(null)
+    const scrollTicking = useRef(false)
 
     useEffect(() => {
         _createListeners()
@@ -50,8 +51,23 @@ function ViewportProvider({ children }) {
     }
 
     const _onScroll = () => {
-        setScrollX(window.scrollX)
-        setScrollY(window.scrollY)
+        /*
+         * Coalesce the flood of scroll events into a single state update per
+         * animation frame. ViewportProvider sits near the top of the tree, so an
+         * unthrottled setState here re-renders the whole app on every scroll
+         * event — during fast scrolling on the long editorial pages that
+         * saturates the main thread and the browser can't paint the newly
+         * revealed area, flashing the page blank (cream). One update per frame,
+         * skipping no-op changes, keeps scrolling smooth across browsers.
+         */
+        if(scrollTicking.current)
+            return
+        scrollTicking.current = true
+        requestAnimationFrame(() => {
+            scrollTicking.current = false
+            setScrollX(prev => prev === window.scrollX ? prev : window.scrollX)
+            setScrollY(prev => prev === window.scrollY ? prev : window.scrollY)
+        })
     }
 
     const _onResize = () => {
