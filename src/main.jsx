@@ -9,10 +9,8 @@ import DataProvider, {useData} from "/src/providers/DataProvider.jsx"
 import LanguageProvider from "/src/providers/LanguageProvider.jsx"
 import ViewportProvider from "/src/providers/ViewportProvider.jsx"
 import ThemeProvider from "/src/providers/ThemeProvider.jsx"
-import LocationProvider from "/src/providers/LocationProvider.jsx"
 import FeedbacksProvider from "/src/providers/FeedbacksProvider.jsx"
 import InputProvider from "/src/providers/InputProvider.jsx"
-import NavigationProvider from "/src/providers/NavigationProvider.jsx"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import HomePage from "/src/pages/HomePage.jsx"
 import GardenIndexPage from "/src/pages/GardenIndexPage.jsx"
@@ -150,8 +148,6 @@ const AppCapabilitiesWrapper = ({ children }) => {
 
     const appSettings = data.getSettings()
     const appStrings = data.getStrings()
-    const appSections = data.getSections()
-    const appCategories = data.getCategories()
 
     const supportedLanguages = appSettings["supportedLanguages"]
     const supportedThemes = appSettings["supportedThemes"]
@@ -172,13 +168,7 @@ const AppCapabilitiesWrapper = ({ children }) => {
                                        defaultThemeId={defaultThemeId}
                                        showSpinnerOnThemeChange={showSpinnerOnThemeChange}
                                        onThemeChanged={setSelectedThemeId}>
-                            <LocationProvider sections={appSections}
-                                              categories={appCategories}>
-                                <NavigationProvider sections={appSections}
-                                                    categories={appCategories}>
-                                    {children}
-                                </NavigationProvider>
-                            </LocationProvider>
+                            {children}
                         </ThemeProvider>
                     </FeedbacksProvider>
                 </InputProvider>
