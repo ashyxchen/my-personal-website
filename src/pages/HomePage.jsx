@@ -81,34 +81,6 @@ const HomePage = () => {
 
                 <section className="home-section">
                     <div className="home-section__head">
-                        <h2><Link to="/garden">{pick(LABELS.garden)}</Link></h2>
-                        <p>{pick(GARDEN_INTRO)}</p>
-                    </div>
-
-                    {notes.length > 0 && (
-                        <ul className="home-list">
-                            {notes.map(note => {
-                                const stage = getGrowthStage(note.growth)
-                                return (
-                                    <li key={note.slug}>
-                                        <Link to={`/garden/${note.slug}`}>
-                                            <span className="home-list__growth" aria-hidden="true">{stage?.icon}</span>
-                                            <span className="home-list__title">{note.title}</span>
-                                            {note.summary && (
-                                                <span className="home-list__summary">{note.summary}</span>
-                                            )}
-                                        </Link>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                    )}
-
-                    <Link className="home-section__more" to="/garden">{pick(LABELS.enterGarden)}</Link>
-                </section>
-
-                <section className="home-section">
-                    <div className="home-section__head">
                         <h2>{pick(LABELS.projects)}</h2>
                         <p>{pick(PROJECTS_INTRO)}</p>
                     </div>
@@ -136,6 +108,34 @@ const HomePage = () => {
                     </ul>
 
                     <Link className="home-section__more" to="/projects">{pick(LABELS.allProjects)}</Link>
+                </section>
+
+                <section className="home-section">
+                    <div className="home-section__head">
+                        <h2><Link to="/garden">{pick(LABELS.garden)}</Link></h2>
+                        <p>{pick(GARDEN_INTRO)}</p>
+                    </div>
+
+                    {notes.length > 0 && (
+                        <ul className="home-list">
+                            {notes.map(note => {
+                                const stage = getGrowthStage(note.growth)
+                                return (
+                                    <li key={note.slug}>
+                                        <Link to={`/garden/${note.slug}`}>
+                                            <span className="home-list__growth" aria-hidden="true">{stage?.icon}</span>
+                                            <span className="home-list__title">{note.title}</span>
+                                            {note.summary && (
+                                                <span className="home-list__summary">{note.summary}</span>
+                                            )}
+                                        </Link>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    )}
+
+                    <Link className="home-section__more" to="/garden">{pick(LABELS.enterGarden)}</Link>
                 </section>
 
                 <section className="home-section">

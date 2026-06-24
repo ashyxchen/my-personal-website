@@ -37,6 +37,16 @@ const _formatDate = (date, presentLabel) => {
     return month + date.year
 }
 
+const _dateValue = (date) => (date && date.year) ? date.year * 100 + (date.month || 0) : null
+
+const _sortByDateDesc = (a, b) => {
+    // Most recent first. A missing/ongoing end date counts as "present" (newest).
+    const aEnd = _dateValue(a.dateEnd) ?? Infinity
+    const bEnd = _dateValue(b.dateEnd) ?? Infinity
+    if (aEnd !== bEnd) return bEnd - aEnd
+    return (_dateValue(b.dateStart) ?? 0) - (_dateValue(a.dateStart) ?? 0)
+}
+
 const Timeline = ({items, langId, presentLabel}) => (
     <ol className="about-timeline">
         {items.map(item => {
@@ -101,7 +111,7 @@ const AboutPage = () => {
     const interestsArticle = _articleByComponent(aboutSection, "ArticleInfoList")
     const interests = interestsArticle?.items || []
 
-    const experience = _articleByComponent(_section(data, "experience"), "ArticleTimeline")?.items || []
+    const experience = [...(_articleByComponent(_section(data, "experience"), "ArticleTimeline")?.items || [])].sort(_sortByDateDesc)
     const education = _articleByComponent(_section(data, "education"), "ArticleTimeline")?.items || []
 
     return (
