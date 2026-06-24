@@ -32,9 +32,11 @@ This file is **not** part of the published site.
 ## Current architecture (post-migration)
 
 - `src/main.jsx` wraps the app in `<BrowserRouter>` + the provider stack (Data,
-  Language, Viewport, Input, Feedbacks, Theme, Location, Navigation) and renders
-  routes: `/` (`HomePage`), `/projects` (`ProjectsPage`), `/about` (`AboutPage`),
-  `/garden` (`GardenIndexPage`), `/garden/:slug` (`NotePage`), `*` → home.
+  Language, Viewport, Input, Feedbacks, Theme) and renders routes: `/`
+  (`HomePage`), `/projects` (`ProjectsPage`), `/about` (`AboutPage`), `/garden`
+  (`GardenIndexPage`), `/garden/area/*` (`AreaPage`), `/garden/:slug`
+  (`NotePage`), `*` → home. The slideshow-only `LocationProvider` /
+  `NavigationProvider` were removed in Phase 9.
 - The original slideshow (`Portfolio.jsx`, `LayoutSlideshow`, `Section*`,
   `Article*`, old `nav/`, `hooks/parser.js`) has been **removed** (Phase 5).
 - Content: `public/data/*.json` + `public/data/sections/*.json`, loaded by
@@ -269,3 +271,32 @@ nav, dead buttons/widgets) and `src/hooks/{parser.js,models/*}`.
    headings; sans reserved for UI chrome.
 3. **Note metadata** — ✅ Each note carries one primary `area` plus freeform
    `topics[]`.
+
+### Phase 9 — Stability & cross-browser fixes ✅ DONE
+
+Hardening pass after the migration, prompted by a page-blanking bug on the
+live site in Firefox.
+
+- [x] **Firefox middle-click autoscroll crash (root cause).** Starting Firefox's
+  middle-click autoscroll dispatches mouse events whose `target` is `document`
+  (not an `Element`). `InputProvider` stored that target as `lastMouseTarget`,
+  and `MouseLayer`'s `lastMouseTarget` effect (which runs even when the animated
+  cursor is disabled) called `.matches()` on it → `matches is not a function`
+  threw during a React effect, and with no error boundary the whole tree
+  unmounted → blank cream page that stayed blank until reload. Fix: in
+  `src/providers/InputProvider.jsx`, only store real elements —
+  `setLastMouseTarget(e.target instanceof Element ? e.target : null)` in all
+  three mouse handlers. Reproduced and verified fixed by driving real Firefox
+  with Playwright (autoscroll no longer unmounts the app; no page errors).
+- [x] **Removed the unused slideshow routers.** `LocationProvider` /
+  `NavigationProvider` (the template's hash-based section slideshow) were still
+  mounted but unused by the editorial UI. They hijacked the URL hash (landing on
+  `/#about`), flipped `document.title` on scroll, and ran section transitions —
+  removed from `src/main.jsx`.
+- [x] **Scroll/compositor hardening.** Throttled `ViewportProvider`'s scroll
+  state to one `requestAnimationFrame` update per frame; gated `MouseLayer`'s
+  `requestAnimationFrame` loop on `active` so it doesn't run while the cursor is
+  disabled; made `.site-header` non-sticky and let the viewport scroll natively
+  (no `body` scroll/clip container) in `src/styles/garden/_home.scss`.
+- [x] Verified: `npm run build` passes (492 modules) and the live deploy
+  (GitHub Pages, custom domain `ashyxchen.me`) serves the fixed build.
