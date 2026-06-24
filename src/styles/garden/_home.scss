@@ -35,12 +35,15 @@ body.body-flow #root {
 
 $editorial-measure: 880px;
 
-/* ---- Header ---- */
+/* ---- Header ----
+ * Intentionally NOT position:sticky. A sticky + z-indexed header promotes its
+ * own compositing layer and pushes the page onto a slower main-thread scrolling
+ * paint path, which makes the content layer fail to rasterize during fast
+ * scrolling (the whole page flashes to the cream background). A static header
+ * scrolls away normally and keeps painting fast and reliable cross-browser. */
 .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background-color: color-mix(in srgb, var(--theme-background) 94%, transparent);
+    position: static;
+    background-color: var(--theme-background);
     border-bottom: 1px solid var(--theme-standard-borders);
 
     &__inner {
