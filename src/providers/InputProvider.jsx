@@ -62,18 +62,18 @@ function InputProvider({ children }) {
 
         setIsClicked(true)
         setMouseDownStatus(_generateMouseEventBundle(e))
-        setLastMouseTarget(e.target)
+        setLastMouseTarget(e.target instanceof Element ? e.target : null)
     }
 
     const _onMouseMove = (e) => {
         setMouseMoveStatus(_generateMouseEventBundle(e))
-        setLastMouseTarget(e.target)
+        setLastMouseTarget(e.target instanceof Element ? e.target : null)
     }
 
     const _onMouseUp = (e) => {
         setIsClicked(false)
         setMouseUpStatus(_generateMouseEventBundle(e))
-        setLastMouseTarget(e.target)
+        setLastMouseTarget(e.target instanceof Element ? e.target : null)
 
         scheduler.clearAllWithTag("input-collision-check")
         scheduler.schedule(() => {
